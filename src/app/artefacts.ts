@@ -843,6 +843,63 @@ const Artefacts = [
     ],
     collections: 2,
     quantity: 0
+  },
+  {
+    label: 'Ceremonial Mace',
+    components: [
+      {
+        type: componentTypes.imperialSteel,
+        quantity: 20
+      },
+      {
+        type: componentTypes.thirdAgeIron,
+        quantity: 20
+      },
+      {
+        type: componentTypes.goldrune,
+        quantity: 28
+      }
+    ],
+    collections: 3,
+    quantity: 0
+  },
+  {
+    label: 'Consensus Ad Idem Painting',
+    components: [
+      {
+        type: componentTypes.whiteOak,
+        quantity: 10
+      },
+      {
+        type: componentTypes.samiteSilk,
+        quantity: 10
+      },
+      {
+        type: componentTypes.tyrianPurple,
+        quantity: 50
+      }
+    ],
+    collections: 3,
+    quantity: 0
+  },
+  {
+    label: 'Pontifex Maximus Figurine',
+    components: [
+      {
+        type: componentTypes.zarosianInsigna,
+        quantity: 24
+      },
+      {
+        type: componentTypes.ancientVis,
+        quantity: 16
+      },
+      {
+        type: componentTypes.goldrune,
+        quantity: 28
+      }
+    ],
+    collections: 3,
+    quantity: 0
   }
 ];
 export { Artefacts };
