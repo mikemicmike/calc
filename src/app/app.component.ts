@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { componentTypes } from './componentTypes';
+import { Artefacts } from './artefacts';
 
 interface IComponent {
   type: any;
@@ -9,6 +10,7 @@ interface IArtefact {
   label: string;
   components: IComponent[];
   quantity: number;
+  collections: number;
 }
 @Component({
   selector: 'app-root',
@@ -18,32 +20,7 @@ interface IArtefact {
 export class AppComponent {
   public chosenArtefacts: IArtefact[] = [];
   public neededMaterials: IComponent[] = [];
-  public artefacts: IArtefact[] = [
-    {
-      label: 'Centurion Dress Sword',
-      components: [
-        {
-          type: componentTypes.thirdAgeIron,
-          quantity: 8
-        }
-      ],
-      quantity: 0
-    },
-    {
-      label: 'Venator Dagger',
-      components: [
-        {
-          type: componentTypes.thirdAgeIron,
-          quantity: 12
-        },
-        {
-          type: componentTypes.vellum,
-          quantity: 12
-        }
-      ],
-      quantity: 0
-    }
-  ];
+  public artefacts: IArtefact[] = Artefacts;
 
   public addArtefact(p_artefact: IArtefact): void {
     p_artefact.quantity++;

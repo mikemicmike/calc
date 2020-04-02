@@ -5,6 +5,7 @@
   <li *ngFor="let artefact of artefacts"
       class="list-group-item">
     <button class="btn btn-success"
+            [disabled]="artefact.quantity === 0"
             (click)="removeArtefact(artefact)"><span class="mdi mdi-minus"></span></button>
     {{artefact.quantity}}
     <button class="btn btn-success"
@@ -21,7 +22,7 @@
     {{artefact.quantity}} {{artefact.label}}
   </li>
 </ul>
-<h4>Needed MAterials</h4>
+<h4>Needed Materials</h4>
 <ul class="list-group">
   <li *ngFor="let material of neededMaterials"
       class="list-group-item">
