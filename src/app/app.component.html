@@ -1,0 +1,30 @@
+<button class="btn btn-danger"
+        (click)="reset()">Reset</button>
+<h2>Choose your Artefacts</h2>
+<ul class="list-group">
+  <li *ngFor="let artefact of artefacts"
+      class="list-group-item">
+    <button class="btn btn-success"
+            (click)="removeArtefact(artefact)"><span class="mdi mdi-minus"></span></button>
+    {{artefact.quantity}}
+    <button class="btn btn-success"
+            (click)="addArtefact(artefact)"><span class="mdi mdi-plus"></span></button>
+    {{artefact.label}}
+  </li>
+</ul>
+
+<h2>Results</h2>
+<h4>Chosen Artefacts</h4>
+<ul class="list-group">
+  <li *ngFor="let artefact of chosenArtefacts"
+      class="list-group-item">
+    {{artefact.quantity}} {{artefact.label}}
+  </li>
+</ul>
+<h4>Needed MAterials</h4>
+<ul class="list-group">
+  <li *ngFor="let material of neededMaterials"
+      class="list-group-item">
+    {{material.quantity}} {{material.type.label}}
+  </li>
+</ul>
