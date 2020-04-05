@@ -1,31 +1,161 @@
-<button class="btn btn-danger"
-        (click)="reset()">Reset</button>
-<h2>Choose your Artefacts</h2>
-<ul class="list-group">
-  <li *ngFor="let artefact of artefacts"
-      class="list-group-item">
-    <button class="btn btn-success"
-            [disabled]="artefact.quantity === 0"
-            (click)="removeArtefact(artefact)"><span class="mdi mdi-minus"></span></button>
-    {{artefact.quantity}}
-    <button class="btn btn-success"
-            (click)="addArtefact(artefact)"><span class="mdi mdi-plus"></span></button>
-    {{artefact.label}}
-  </li>
-</ul>
+<div class="d-flex flex-column"
+     style="height: 100%">
+  <div style="flex: 1 0 auto;"
+       [ngClass]="{'dark': darkMode}">
+    <div class="container-fluid">
+      <h1>
+        Archaeology Artefact Material Calculator
+        <button *ngIf="!darkMode"
+                class="btn btn-info float-right"
+                (click)="toggleDarkMode(true)">Dark Mode</button>
+        <button *ngIf="darkMode"
+                class="btn btn-info float-right"
+                (click)="toggleDarkMode(false)">Light Mode</button>
+      </h1>
+      <p>
+        Here is just a tool I quickly put together to calculate the materials needed for given artefacts.
+        <br>
+        Simply select what artefacts you plan on making and at the list of the materials you need will appear.
 
-<h2>Results</h2>
-<h4>Chosen Artefacts</h4>
-<ul class="list-group">
-  <li *ngFor="let artefact of chosenArtefacts"
-      class="list-group-item">
-    {{artefact.quantity}} {{artefact.label}}
-  </li>
-</ul>
-<h4>Needed Materials</h4>
-<ul class="list-group">
-  <li *ngFor="let material of neededMaterials"
-      class="list-group-item">
-    {{material.quantity}} {{material.type.label}}
-  </li>
-</ul>
+        <br>
+
+        I havent finished adding all the artefacts it goes up to level 110 as of now.
+
+        <br>
+        If you notice any issues please let me know in game or tag me in Archaeology discord!
+        <br>
+        Special thanks to KhaleesiZara for helping me with this!
+        <br>
+        Mikemicmike
+      </p>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Choose your Artefacts
+            <button *ngIf="byFaction"
+                    (click)="changeByFaction(false)"
+                    class="btn btn-info">Show By Collection</button>
+            <button *ngIf="!byFaction"
+                    (click)="changeByFaction(true)"
+                    class="btn btn-info">Show By Faction</button>
+            <button (click)="resetArtefacts()"
+                    class="btn btn-danger ml-1">Remove all Artefacts</button>
+            <input type="text"
+                   class="form-control mt-1"
+                   (input)="filterResults()"
+                   placeholder="Search"
+                   [(ngModel)]="search">
+          </h2>
+          <div class="card"
+               *ngFor="let entry of data">
+            <div class="card-header"
+                 style="cursor: pointer;"
+                 [ngStyle]="{'background-color': entry.color}"
+                 [ngClass]="{'dark-text': byFaction}"
+                 (click)="entry.collapsed = !entry.collapsed">
+              <h4>{{entry.label}} - Level {{entry.levelReq}}
+                <div class="float-right">
+                  <span *ngIf="entry.collapsed"
+                        class="mdi mdi-chevron-up"></span>
+                  <span *ngIf="!entry.collapsed"
+                        class="mdi mdi-chevron-down"></span>
+                </div>
+              </h4>
+            </div>
+            <div class="card-body"
+                 *ngIf="!entry.collapsed">
+              <div class="row">
+                <div class="col-xl-3 col-sm-6 col-12 pb-2"
+                     style="border: 1px solid #ccc;"
+                     *ngFor="let artefact of entry.artefacts">
+                  <span>{{artefact.level}} - {{artefact.label | titlecase}}</span>
+                  <br>
+                  <div class="input-group">
+
+                    <button class="input-group-prepend btn btn-success"
+                            [disabled]="artefact.quantity === 0"
+                            (click)="removeArtefact(artefact)"><span class="mdi mdi-minus"></span></button>
+                    <input type="number"
+                           class="form-control"
+                           (input)="calculateTotals()"
+                           [(ngModel)]="artefact.quantity">
+                    <button class="input-group-append btn btn-success"
+                            (click)="addArtefact(artefact)"><span class="mdi mdi-plus"></span></button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h2>Results</h2>
+          <h4>Chosen Artefacts</h4>
+          <ul class="list-group">
+            <li *ngFor="let artefact of chosenArtefacts"
+                class="list-group-item">
+              {{artefact.quantity}} {{artefact.label | titlecase}} ({{artefact.xp}}xp each)
+            </li>
+          </ul>
+          <h6 *ngIf="totalXp">Total XP: {{totalXp | number:'1.0-0'}}</h6>
+          <h6 *ngIf="totalXp">Total XP with Outfit: {{totalXp * 1.06 | number:'1.0-0'}}</h6>
+          <h4>Required Materials</h4>
+          <ul class="list-group">
+            <li *ngFor="let material of neededMaterials"
+                class="list-group-item">
+              {{material.quantity}} {{material.type.label}}
+            </li>
+          </ul>
+          <h4>
+            Owned Materials
+            <button (click)="removeOwnedMaterials()"
+                    class="btn btn-danger">Remove Owned</button>
+          </h4>
+
+          <ul class="list-group">
+            <li *ngFor="let material of neededMaterials"
+                class="list-group-item">
+              <input type="number"
+                     class="form-control"
+                     style="max-width: 100px; display: inline"
+                     [(ngModel)]="componentTypes[material.type.id].owned">
+              {{material.type.label}}
+            </li>
+          </ul>
+          <h4>Needed Materials</h4>
+          <ul class="list-group">
+            <ng-template ngFor
+                         let-material
+                         [ngForOf]="neededMaterials">
+              <li *ngIf="!componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity"
+                  class="list-group-item">
+                <span [ngClass]="{'strike-through': componentTypes[material.type.id].done}">
+
+                  <span *ngIf="componentTypes[material.type.id].owned">
+                    {{material.quantity - componentTypes[material.type.id].owned }}
+                  </span>
+                  <span *ngIf="!componentTypes[material.type.id].owned">
+                    {{material.quantity}}
+                  </span>
+                  {{material.type.label}}
+                </span>
+                <button *ngIf="!componentTypes[material.type.id].done"
+                        (click)="markComplete(componentTypes[material.type.id])"
+                        class="ml-2 btn btn-info">Done</button>
+                <button *ngIf="componentTypes[material.type.id].done"
+                        (click)="unmarkComplete(componentTypes[material.type.id])"
+                        class="ml-2 btn btn-info">Undo</button>
+              </li>
+            </ng-template>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="sticky-footer"
+          class="pt-1 pb-2 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright 2020 &copy; RSN: Mikemicmike & KhaleesiZara - Clan: Rise of the Abyss</small>
+    </div>
+  </footer>
+</div>

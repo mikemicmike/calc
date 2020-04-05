@@ -1,3 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 $mdi-font-path: '~@mdi/font/fonts/'; // NOTE: Had to seach the interwebs to figure this one out! -Félix
 @import '~@mdi/font/scss/materialdesignicons';
+
+html,
+body {
+  height: 100%;
+}

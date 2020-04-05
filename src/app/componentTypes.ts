@@ -45,11 +45,11 @@ const componentTypes = {
   },
   leatherScraps: {
     id: 'leatherScraps',
-    label: 'LeatherScraps'
+    label: 'Leather Scraps'
   },
   chaoticBrimstone: {
     id: 'chaoticBrimstone',
-    label: 'ChaoticBrimstone'
+    label: 'Chaotic Brimstone'
   },
   demonhide: {
     id: 'demonhide',
@@ -57,7 +57,7 @@ const componentTypes = {
   },
   eyeOfTheDagon: {
     id: 'eyeOfTheDagon',
-    label: 'Eye Of The Dagon'
+    label: 'Eye Of Dagon'
   },
   hellfireMetal: {
     id: 'hellfireMetal',
@@ -105,7 +105,7 @@ const componentTypes = {
   },
   malachiteGreen: {
     id: 'malachiteGreen',
-    label: 'MalachiteGreen'
+    label: 'Malachite Green'
   },
   markOfTheKyzaj: {
     id: 'markOfTheKyzaj',
@@ -113,15 +113,15 @@ const componentTypes = {
   },
   vulcanisedRubble: {
     id: 'vulcanisedRubble',
-    label: 'Vulcanised Rubble'
+    label: 'Vulcanised Rubber'
   },
   warforgedBronze: {
     id: 'warforgedBronze',
-    label: 'WarforgedBronze'
+    label: 'Warforged Bronze'
   },
   fossilisedBone: {
     id: 'fossilisedBone',
-    label: 'FossilisedBone'
+    label: 'Fossilised Bone'
   },
   yubiuskClay: {
     id: 'yubiuskClay',
@@ -138,6 +138,66 @@ const componentTypes = {
   soapstone: {
     id: 'soapstone',
     label: 'Soapstone'
+  },
+  ruby: {
+    id: 'ruby',
+    label: 'Ruby'
+  },
+  whiteCandle: {
+    id: 'whiteCandle',
+    label: 'White Candle'
+  },
+  clockwork: {
+    id: 'clockwork',
+    label: 'Clockwork'
+  },
+  dragonstone: {
+    id: 'dragonstone',
+    label: 'Dragonstone'
+  },
+  bronzeBar: {
+    id: 'bronzeBar',
+    label: 'Bronze Bar'
+  },
+  silverBar: {
+    id: 'silverBar',
+    label: 'Silver Bar'
+  },
+  sapphire: {
+    id: 'sapphire',
+    label: 'Sapphire'
+  },
+  diamond: {
+    id: 'diamond',
+    label: 'Diamond'
+  },
+  phoenixFeather: {
+    id: 'phoenixFeather',
+    label: 'Phoenix Feather'
+  },
+  weaponPoison: {
+    id: 'weaponPoison',
+    label: 'Weapon Poison'
+  },
+  rope: {
+    id: 'rope',
+    label: 'Rope'
+  },
+  emerald: {
+    id: 'emerald',
+    label: 'Emerald'
+  },
+  blackMushroomInk: {
+    id: 'blackMushroomInk',
+    label: 'Black Mushroom Ink'
+  },
+  moltenGlass: {
+    id: 'moltenGlass',
+    label: 'Molten Glass'
+  },
+  deathRune: {
+    id: 'deathRune',
+    label: 'Death Rune'
   }
 };
 export { componentTypes };
