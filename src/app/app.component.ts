@@ -99,6 +99,16 @@ export class AppComponent implements OnInit {
     }
   }
 
+  public toggleComplete(p_componentType: any): void {
+
+    if(p_componentType.done == true){
+        p_componentType.done = false;
+    }else{
+        p_componentType.done = true;
+    }
+    
+  }
+
   public markComplete(p_componentType: any): void {
     p_componentType.done = true;
   }
