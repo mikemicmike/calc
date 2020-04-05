@@ -89,65 +89,98 @@
           </div>
         </div>
         <div class="col-md-6">
-          <h2>Results</h2>
-          <h4>Chosen Artefacts</h4>
-          <ul class="list-group">
-            <li *ngFor="let artefact of chosenArtefacts"
-                class="list-group-item">
-              {{artefact.quantity}} {{artefact.label | titlecase}} ({{artefact.xp}}xp each)
-            </li>
-          </ul>
-          <h6 *ngIf="totalXp">Total XP: {{totalXp | number:'1.0-0'}}</h6>
-          <h6 *ngIf="totalXp">Total XP with Outfit: {{totalXp * 1.06 | number:'1.0-0'}}</h6>
-          <h4>Required Materials</h4>
-          <ul class="list-group">
-            <li *ngFor="let material of neededMaterials"
-                class="list-group-item">
-              {{material.quantity}} {{material.type.label}}
-            </li>
-          </ul>
-          <h4>
-            Owned Materials
-            <button (click)="removeOwnedMaterials()"
-                    class="btn btn-danger">Remove Owned</button>
-          </h4>
-
-          <ul class="list-group">
-            <li *ngFor="let material of neededMaterials"
-                class="list-group-item">
-              <input type="number"
-                     class="form-control"
-                     style="max-width: 100px; display: inline"
-                     [(ngModel)]="componentTypes[material.type.id].owned">
-              {{material.type.label}}
-            </li>
-          </ul>
-          <h4>Needed Materials</h4>
-          <ul class="list-group">
+          <div class="row">
+            <div class="col">
+              <h2>Results</h2>
+              <h4>Chosen Artefacts</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <ul class="list-group">
+                <li *ngFor="let artefact of chosenArtefacts"
+                    class="list-group-item">
+                  {{artefact.quantity}} {{artefact.label | titlecase}} ({{artefact.xp}}xp each)
+                </li>
+              </ul>
+              <h6 *ngIf="totalXp">Total XP: {{totalXp | number:'1.0-0'}}</h6>
+              <h6 *ngIf="totalXp">Total XP with Outfit: {{totalXp * 1.06 | number:'1.0-0'}}</h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>Required Materials</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 material-card-holder"
+                 *ngFor="let material of neededMaterials">
+              <div class="p-2 material-card">
+                {{material.quantity}} {{material.type.label}}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>
+                Owned Materials
+                <button (click)="removeOwnedMaterials()"
+                        class="btn btn-danger">Remove Owned</button>
+              </h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 material-card-holder"
+                 *ngFor="let material of neededMaterials">
+              <div class="p-2 material-card">
+                <input type="number"
+                       class="form-control"
+                       style="max-width: 100px; display: inline"
+                       [(ngModel)]="componentTypes[material.type.id].owned">
+                {{material.type.label}}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>Needed Materials</h4>
+            </div>
+          </div>
+          <div class="row">
             <ng-template ngFor
                          let-material
                          [ngForOf]="neededMaterials">
-              <li *ngIf="!componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity"
-                  class="list-group-item">
-                <span [ngClass]="{'strike-through': componentTypes[material.type.id].done}">
+              <div class="col-md-6 material-card-holder"
+                   *ngIf="!componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity">
+                <div class="p-2 material-card">
+                  <div class="row">
+                    <div class="col-8">
+                      <span [ngClass]="{'strike-through': componentTypes[material.type.id].done}">
 
-                  <span *ngIf="componentTypes[material.type.id].owned">
-                    {{material.quantity - componentTypes[material.type.id].owned }}
-                  </span>
-                  <span *ngIf="!componentTypes[material.type.id].owned">
-                    {{material.quantity}}
-                  </span>
-                  {{material.type.label}}
-                </span>
-                <button *ngIf="!componentTypes[material.type.id].done"
-                        (click)="markComplete(componentTypes[material.type.id])"
-                        class="ml-2 btn btn-info">Done</button>
-                <button *ngIf="componentTypes[material.type.id].done"
-                        (click)="unmarkComplete(componentTypes[material.type.id])"
-                        class="ml-2 btn btn-info">Undo</button>
-              </li>
+                        <span *ngIf="componentTypes[material.type.id].owned">
+                          {{material.quantity - componentTypes[material.type.id].owned }}
+                        </span>
+                        <span *ngIf="!componentTypes[material.type.id].owned">
+                          {{material.quantity}}
+                        </span>
+                        {{material.type.label}}
+                      </span>
+                    </div>
+                    <div class="col-4">
+                      <div class="pr-2">
+                        <button *ngIf="!componentTypes[material.type.id].done"
+                                (click)="markComplete(componentTypes[material.type.id])"
+                                class="btn btn-info btn-block">Done</button>
+                        <button *ngIf="componentTypes[material.type.id].done"
+                                (click)="unmarkComplete(componentTypes[material.type.id])"
+                                class="btn btn-info btn-block">Undo</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </ng-template>
-          </ul>
+          </div>
         </div>
       </div>
     </div>

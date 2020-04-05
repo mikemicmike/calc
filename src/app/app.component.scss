@@ -33,3 +33,15 @@ input[type='number']::-webkit-outer-spin-button {
     color: black;
   }
 }
+
+.material-card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.material-card-holder:nth-child(odd) {
+  padding-right: 0px;
+}
+.material-card-holder:nth-child(even) {
+  padding-left: 0px;
+}
