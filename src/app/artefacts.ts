@@ -460,6 +460,10 @@ const Artefacts = [
       {
         type: componentTypes.keramos,
         quantity: 24
+      },
+      {
+        type: componentTypes.whiteCandle,
+        quantity: 1
       }
     ],
     level: 42,
@@ -2907,7 +2911,7 @@ const Artefacts = [
     level: 107,
     xp: 27000,
     faction: factions.zarosian.id,
-    collections: [collections.zarosianIV.id, collections.museumZarosianIV.id],
+    collections: [collections.zarosianIII.id, collections.museumZarosianIII.id],
     quantity: 0
   },
   {
@@ -2930,8 +2934,8 @@ const Artefacts = [
     xp: 27000,
     faction: factions.zarosian.id,
     collections: [
-      collections.zarosianIV.id,
-      collections.museumZarosianIV.id,
+      collections.zarosianIII.id,
+      collections.museumZarosianIII.id,
       collections.magicMan.id
     ],
     quantity: 0
@@ -2956,8 +2960,8 @@ const Artefacts = [
     xp: 27000,
     faction: factions.zarosian.id,
     collections: [
-      collections.zarosianIV.id,
-      collections.museumZarosianIV.id,
+      collections.zarosianIII.id,
+      collections.museumZarosianIII.id,
       collections.magicMan.id
     ],
     quantity: 0
@@ -3099,6 +3103,608 @@ const Artefacts = [
     collections: [
       collections.zamorakianIII.id,
       collections.museumZamorakianIII.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Flat Cap',
+    components: [
+      {
+        type: componentTypes.armadyleanYellow,
+        quantity: 60
+      },
+      {
+        type: componentTypes.samiteSilk,
+        quantity: 54
+      }
+    ],
+    level: 111,
+    xp: 32333.3,
+    faction: factions.armadylean.id,
+    collections: [
+      collections.hatProblem.id,
+      collections.armadyleanIII.id,
+      collections.museumArmadyleanIII.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Night Owl Flight Goggles',
+    components: [
+      {
+        type: componentTypes.armadyleanYellow,
+        quantity: 44
+      },
+      {
+        type: componentTypes.leatherScraps,
+        quantity: 40
+      },
+      {
+        type: componentTypes.orthenglass,
+        quantity: 30
+      }
+    ],
+    level: 111,
+    xp: 32333.3,
+    faction: factions.armadylean.id,
+    collections: [
+      collections.armadyleanIII.id,
+      collections.museumArmadyleanIII.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Prototype Godbow',
+    components: [
+      {
+        type: componentTypes.aetheriumAlloy,
+        quantity: 50
+      },
+      {
+        type: componentTypes.quintessence,
+        quantity: 34
+      },
+      {
+        type: componentTypes.wingsOfWar,
+        quantity: 34
+      }
+    ],
+    level: 112,
+    xp: 33666.7,
+    faction: factions.armadylean.id,
+    collections: [
+      collections.armadyleanIII.id,
+      collections.museumArmadyleanIII.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Prototype Godstaff',
+    components: [
+      {
+        type: componentTypes.aetheriumAlloy,
+        quantity: 50
+      },
+      {
+        type: componentTypes.quintessence,
+        quantity: 34
+      },
+      {
+        type: componentTypes.wingsOfWar,
+        quantity: 34
+      }
+    ],
+    level: 112,
+    xp: 33666.7,
+    faction: factions.armadylean.id,
+    collections: [
+      collections.armadyleanIII.id,
+      collections.museumArmadyleanIII.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Prototype Godsword',
+    components: [
+      {
+        type: componentTypes.aetheriumAlloy,
+        quantity: 50
+      },
+      {
+        type: componentTypes.goldrune,
+        quantity: 34
+      },
+      {
+        type: componentTypes.wingsOfWar,
+        quantity: 34
+      }
+    ],
+    level: 112,
+    xp: 33666.7,
+    faction: factions.armadylean.id,
+    collections: [
+      collections.armadyleanIII.id,
+      collections.museumArmadyleanIII.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Praetorian Hood',
+    components: [
+      {
+        type: componentTypes.ancientVis,
+        quantity: 36
+      },
+      {
+        type: componentTypes.samiteSilk,
+        quantity: 48
+      },
+      {
+        type: componentTypes.zarosianInsigna,
+        quantity: 40
+      },
+      {
+        type: componentTypes.deathRune,
+        quantity: 30
+      }
+    ],
+    level: 114,
+    xp: 36666.7,
+    faction: factions.zarosian.id,
+    collections: [
+      collections.hatProblem.id,
+      collections.zarosianIV.id,
+      collections.museumZarosianIV.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Praetorian Robes',
+    components: [
+      {
+        type: componentTypes.ancientVis,
+        quantity: 30
+      },
+      {
+        type: componentTypes.samiteSilk,
+        quantity: 54
+      },
+      {
+        type: componentTypes.zarosianInsigna,
+        quantity: 40
+      },
+      {
+        type: componentTypes.deathRune,
+        quantity: 50
+      }
+    ],
+    level: 114,
+    xp: 36666.7,
+    faction: factions.zarosian.id,
+    collections: [collections.zarosianIV.id, collections.museumZarosianIV.id],
+    quantity: 0
+  },
+  {
+    label: 'Praetorian Staff',
+    components: [
+      {
+        type: componentTypes.imperialSteel,
+        quantity: 36
+      },
+      {
+        type: componentTypes.ancientVis,
+        quantity: 58
+      },
+      {
+        type: componentTypes.zarosianInsigna,
+        quantity: 30
+      },
+      {
+        type: componentTypes.deathRune,
+        quantity: 100
+      }
+    ],
+    level: 114,
+    xp: 36666.7,
+    faction: factions.zarosian.id,
+    collections: [collections.zarosianIV.id, collections.museumZarosianIV.id],
+    quantity: 0
+  },
+  {
+    label: 'Kal-i-kran chieftain crown',
+    components: [
+      {
+        type: componentTypes.yubiuskClay,
+        quantity: 66
+      },
+      {
+        type: componentTypes.animalFurs,
+        quantity: 60
+      }
+    ],
+    level: 115,
+    xp: 38333.3,
+    faction: factions.bandosian.id,
+    collections: [
+      collections.redRumRelicsIII.id,
+      collections.museumBandosianIII.id,
+      collections.hatHoarder.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Kal-i-kran mace',
+    components: [
+      {
+        type: componentTypes.vulcanisedRubble,
+        quantity: 42
+      },
+      {
+        type: componentTypes.thirdAgeIron,
+        quantity: 44
+      },
+      {
+        type: componentTypes.fossilisedBone,
+        quantity: 40
+      }
+    ],
+    level: 115,
+    xp: 38333.3,
+    faction: factions.bandosian.id,
+    collections: [
+      collections.redRumRelicsIII.id,
+      collections.museumBandosianIII.id,
+      collections.hatHoarder.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Kal-i-kran warhorn',
+    components: [
+      {
+        type: componentTypes.vulcanisedRubble,
+        quantity: 44
+      },
+      {
+        type: componentTypes.fossilisedBone,
+        quantity: 42
+      },
+      {
+        type: componentTypes.animalFurs,
+        quantity: 40
+      }
+    ],
+    level: 115,
+    xp: 38333.3,
+    faction: factions.bandosian.id,
+    collections: [
+      collections.redRumRelicsIII.id,
+      collections.museumBandosianIII.id,
+      collections.hatHoarder.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Tsutsaroth Helm',
+    components: [
+      {
+        type: componentTypes.hellfireMetal,
+        quantity: 50
+      },
+      {
+        type: componentTypes.eyeOfTheDagon,
+        quantity: 40
+      },
+      {
+        type: componentTypes.goldrune,
+        quantity: 40
+      }
+    ],
+    level: 116,
+    xp: 40000.0,
+    faction: factions.zamorakian.id,
+    collections: [
+      collections.zamorakianIV.id,
+      collections.museumZamorakianIV.id,
+      collections.hatHoarder.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Tsutsaroth Pauldron',
+    components: [
+      {
+        type: componentTypes.hellfireMetal,
+        quantity: 40
+      },
+      {
+        type: componentTypes.eyeOfTheDagon,
+        quantity: 40
+      },
+      {
+        type: componentTypes.goldrune,
+        quantity: 50
+      }
+    ],
+    level: 116,
+    xp: 40000.0,
+    faction: factions.zamorakian.id,
+    collections: [
+      collections.zamorakianIV.id,
+      collections.museumZamorakianIV.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Tsutsaroth Urumi',
+    components: [
+      {
+        type: componentTypes.hellfireMetal,
+        quantity: 50
+      },
+      {
+        type: componentTypes.eyeOfTheDagon,
+        quantity: 40
+      },
+      {
+        type: componentTypes.thirdAgeIron,
+        quantity: 40
+      }
+    ],
+    level: 116,
+    xp: 40000.0,
+    faction: factions.zamorakian.id,
+    collections: [
+      collections.zamorakianIV.id,
+      collections.museumZamorakianIV.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Kontos Lance',
+    components: [
+      {
+        type: componentTypes.everlightSilvithril,
+        quantity: 70
+      },
+      {
+        type: componentTypes.samiteSilk,
+        quantity: 62
+      }
+    ],
+    level: 117,
+    xp: 41666.7,
+    faction: factions.saradomist.id,
+    collections: [
+      collections.saradoministIV.id,
+      collections.museumSaradoministIV.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Kontos Lance',
+    components: [
+      {
+        type: componentTypes.everlightSilvithril,
+        quantity: 70
+      },
+      {
+        type: componentTypes.whiteOak,
+        quantity: 62
+      }
+    ],
+    level: 117,
+    xp: 41666.7,
+    faction: factions.saradomist.id,
+    collections: [
+      collections.saradoministIV.id,
+      collections.museumSaradoministIV.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Chuluu Stone',
+    components: [
+      {
+        type: componentTypes.aetheriumAlloy,
+        quantity: 40
+      },
+      {
+        type: componentTypes.quintessence,
+        quantity: 30
+      },
+      {
+        type: componentTypes.soapstone,
+        quantity: 40
+      },
+      {
+        type: componentTypes.goldrune,
+        quantity: 24
+      }
+    ],
+    level: 118,
+    xp: 43333.3,
+    faction: factions.armadylean.id,
+    collections: [
+      collections.armadyleanIII.id,
+      collections.museumArmadyleanIII.id,
+      collections.magicMan.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Quintessence Counter',
+    components: [
+      {
+        type: componentTypes.quintessence,
+        quantity: 54
+      },
+      {
+        type: componentTypes.stormguardSteel,
+        quantity: 40
+      },
+      {
+        type: componentTypes.whiteOak,
+        quantity: 40
+      }
+    ],
+    level: 118,
+    xp: 43333.3,
+    faction: factions.armadylean.id,
+    collections: [
+      collections.armadyleanIII.id,
+      collections.museumArmadyleanIII.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Spherical astrolabe',
+    components: [
+      {
+        type: componentTypes.aetheriumAlloy,
+        quantity: 46
+      },
+      {
+        type: componentTypes.armadyleanYellow,
+        quantity: 40
+      },
+      {
+        type: componentTypes.orthenglass,
+        quantity: 48
+      }
+    ],
+    level: 118,
+    xp: 43333.3,
+    faction: factions.armadylean.id,
+    collections: [
+      collections.armadyleanIII.id,
+      collections.museumArmadyleanIII.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Ancient globe',
+    components: [
+      {
+        type: componentTypes.whiteOak,
+        quantity: 20
+      },
+      {
+        type: componentTypes.tyrianPurple,
+        quantity: 54
+      },
+      {
+        type: componentTypes.ancientVis,
+        quantity: 60
+      }
+    ],
+    level: 118,
+    xp: 43333.3,
+    faction: factions.zarosian.id,
+    collections: [collections.zarosianIV.id, collections.museumZarosianIV.id],
+    quantity: 0
+  },
+  {
+    label: 'Battle Plans',
+    components: [
+      {
+        type: componentTypes.vellum,
+        quantity: 40
+      },
+      {
+        type: componentTypes.tyrianPurple,
+        quantity: 60
+      },
+      {
+        type: componentTypes.ancientVis,
+        quantity: 34
+      }
+    ],
+    level: 118,
+    xp: 43333.3,
+    faction: factions.zarosian.id,
+    collections: [collections.zarosianIV.id, collections.museumZarosianIV.id],
+    quantity: 0
+  },
+  {
+    label: "'Prima Legio' Painting",
+    components: [
+      {
+        type: componentTypes.whiteOak,
+        quantity: 20
+      },
+      {
+        type: componentTypes.samiteSilk,
+        quantity: 20
+      },
+      {
+        type: componentTypes.zarosianInsigna,
+        quantity: 20
+      },
+      {
+        type: componentTypes.tyrianPurple,
+        quantity: 74
+      }
+    ],
+    level: 118,
+    xp: 43333.3,
+    faction: factions.zarosian.id,
+    collections: [
+      collections.zarosianIV.id,
+      collections.museumZarosianIV.id,
+      collections.imperialImpressionism.id
+    ],
+    quantity: 0
+  },
+  {
+    label: 'Horogothgar cooking pot',
+    components: [
+      {
+        type: componentTypes.yubiuskClay,
+        quantity: 60
+      },
+      {
+        type: componentTypes.malachiteGreen,
+        quantity: 38
+      },
+      {
+        type: componentTypes.soapstone,
+        quantity: 40
+      }
+    ],
+    level: 119,
+    xp: 45000,
+    faction: factions.bandosian.id,
+    collections: [
+      collections.greenGobboGoodiesIII.id,
+      collections.museumBandosianIII.id
+    ],
+    quantity: 0
+  },
+  {
+    label: "'Da Boss Man' sculpture",
+    components: [
+      {
+        type: componentTypes.yubiuskClay,
+        quantity: 50
+      },
+      {
+        type: componentTypes.malachiteGreen,
+        quantity: 44
+      },
+      {
+        type: componentTypes.soapstone,
+        quantity: 44
+      }
+    ],
+    level: 119,
+    xp: 45000,
+    faction: factions.bandosian.id,
+    collections: [
+      collections.greenGobboGoodiesIII.id,
+      collections.redRumRelicsIII.id,
+      collections.museumBandosianIII.id,
+      collections.knowledgeIsPower.id
     ],
     quantity: 0
   }

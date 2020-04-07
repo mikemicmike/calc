@@ -113,7 +113,7 @@ const collections = {
     id: 'armadyleanII',
     label: 'Armadylean II',
     collector: collectors.lowse,
-    levelReq: 103
+    levelReq: 98
   },
   armadyleanIII: {
     id: 'armadyleanIII',
@@ -203,7 +203,7 @@ const collections = {
     id: 'museumArmadyleanII',
     label: 'Museum Armadylean II',
     collector: collectors.velucia,
-    levelReq: 103
+    levelReq: 98
   },
   museumArmadyleanIII: {
     id: 'museumArmadyleanIII',
