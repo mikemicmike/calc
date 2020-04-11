@@ -2,36 +2,36 @@
      style="height: 100%">
   <div style="flex: 1 0 auto;"
        [ngClass]="{'dark': darkMode}">
-    <div class="container-fluid">
-      <h1>
-        Archaeology Artefact Material Calculator
+    <div class="gridMain">
+      <div class="header">
+        <h3> Archaeology Artefact Material Calculator </h3>
         <button *ngIf="!darkMode"
-                class="btn btn-info float-right"
-                (click)="toggleDarkMode(true)">Dark Mode</button>
+                class="btn btn-info"
+                (click)="toggleDarkMode(true)">🌞</button>
         <button *ngIf="darkMode"
-                class="btn btn-info float-right"
-                (click)="toggleDarkMode(false)">Light Mode</button>
-      </h1>
-      <div class="row">
-        <div class="col-lg-6">
+                class="btn btn-info"
+                (click)="toggleDarkMode(false)">🌑</button>
+      </div>
+      <div class="info" >
+        <div>
           <p>
-            Here is just a tool I quickly put together to calculate the materials needed for given artefacts.
+            Here is just a tool I quickly put together to calculate the materials needed for given artefact.
             <br>
-            Simply select what artefacts you plan on making and at the list of the materials you need will appear.
+            Simply select what artifacts you plan on making and at the list of the materials you need will appear.
 
             <br>
 
-            All artefacts have been added!
+            All artefact have been added!
 
             <br>
             If you notice any issues please let me know in game or tag me in Archaeology discord!
             <br>
-            Special thanks to KhaleesiZara for helping me with this!
+            Special thanks to KhaleesiZara & Anilokip4 for helping me with this!
             <br>
             Mikemicmike
           </p>
         </div>
-        <div class="col-lg-6">
+        <div>
           <div class="card">
             <div class="card-header"
                  style="cursor: pointer;"
@@ -151,25 +151,29 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-6">
-          <h2>Choose your Artefacts
-            <button *ngIf="byFaction"
-                    (click)="changeByFaction(false)"
-                    class="btn btn-info">Show By Collection</button>
-            <button *ngIf="!byFaction"
-                    (click)="changeByFaction(true)"
-                    class="btn btn-info">Show By Faction</button>
-            <button class="btn btn-danger ml-1"
-                    (click)="resetAll()">Reset All</button>
-            <button (click)="resetArtefacts()"
-                    class="btn btn-danger ml-1">Remove all Artefacts</button>
-            <input type="text"
-                   class="form-control mt-1"
-                   (input)="filterResults()"
-                   placeholder="Search"
-                   [(ngModel)]="search">
-          </h2>
+      <div class="calculator">
+        <div>
+          <div class="calcHeader">
+              <h4>Choose your Artifacts</h4>
+              <span>
+                <button *ngIf="byFaction"
+                        (click)="changeByFaction(false)"
+                        class="btn btn-info">Show By Collection</button>
+                <button *ngIf="!byFaction"
+                        (click)="changeByFaction(true)"
+                        class="btn btn-info">Show By Faction</button>
+                <button class="btn btn-danger ml-1"
+                        (click)="resetAll()">Reset All</button>
+                <button (click)="resetArtefacts()"
+                  class="btn btn-danger ml-1">Remove all Artefacts</button>
+              </span>
+                     
+              <input type="text"
+                      class="form-control mt-1"
+                      (input)="filterResults()"
+                      placeholder="Search"
+                      [(ngModel)]="search">
+          </div>
           <div class="card"
                *ngFor="let entry of data">
             <div class="card-header"
@@ -177,25 +181,24 @@
                  [ngStyle]="{'background-color': entry.color}"
                  [ngClass]="{'dark-text': byFaction}"
                  (click)="entry.collapsed = !entry.collapsed">
-              <h4>{{entry.label}} - Level {{entry.levelReq}}
+              <h5>{{entry.label}} - Level {{entry.levelReq}}
                 <div class="float-right">
                   <span *ngIf="entry.collapsed"
                         class="mdi mdi-chevron-up"></span>
                   <span *ngIf="!entry.collapsed"
                         class="mdi mdi-chevron-down"></span>
                 </div>
-              </h4>
+              </h5>
             </div>
             <div class="card-body"
                  *ngIf="!entry.collapsed">
-              <div class="row">
-                <div class="col-xl-3 col-sm-6 col-12 pb-2"
-                     style="border: 1px solid #ccc;"
-                     *ngFor="let artefact of entry.artefacts">
-                  <span>{{artefact.level}} - {{artefact.label | titlecase}}</span>
-                  <br>
+              <div class="itemsContainer">
+                <div
+                    class="item"
+                    style="border: 1px solid #ccc;"
+                    *ngFor="let artefact of entry.artefacts">
+                  <div class="title">{{artefact.level}} - {{artefact.label | titlecase}}</div>
                   <div class="input-group">
-
                     <button class="input-group-prepend btn btn-success"
                             [disabled]="artefact.quantity === 0"
                             (click)="removeArtefact(artefact)"><span class="mdi mdi-minus"></span></button>
@@ -213,7 +216,7 @@
 
           </div>
         </div>
-        <div class="col-md-6">
+        <div>
           <div class="row">
             <div class="col">
               <h2>Results</h2>

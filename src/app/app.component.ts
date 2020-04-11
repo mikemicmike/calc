@@ -26,7 +26,7 @@ interface IArtefact {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public xpCalcCollapsed: boolean;
+  public xpCalcCollapsed: boolean = true;
   public byLevel: boolean = true;
   public componentTypes: typeof componentTypes = componentTypes;
   public currentXp: number;
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
     level: number;
     quantity: number;
   }[] = [];
-  public darkMode: boolean = false;
+  public darkMode: boolean = true;
   public byFaction: boolean = true;
   public hasOwnedMaterials: boolean = false;
   public search: string;
