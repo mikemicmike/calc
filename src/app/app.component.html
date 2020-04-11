@@ -12,7 +12,7 @@
                 class="btn btn-info"
                 (click)="toggleDarkMode(false)">🌑</button>
       </div>
-      <div class="info" >
+      <div class="info">
         <div>
           <p>
             Here is just a tool I quickly put together to calculate the materials needed for given artefact.
@@ -154,25 +154,25 @@
       <div class="calculator">
         <div>
           <div class="calcHeader">
-              <h4>Choose your Artifacts</h4>
-              <span>
-                <button *ngIf="byFaction"
-                        (click)="changeByFaction(false)"
-                        class="btn btn-info">Show By Collection</button>
-                <button *ngIf="!byFaction"
-                        (click)="changeByFaction(true)"
-                        class="btn btn-info">Show By Faction</button>
-                <button class="btn btn-danger ml-1"
-                        (click)="resetAll()">Reset All</button>
-                <button (click)="resetArtefacts()"
-                  class="btn btn-danger ml-1">Remove all Artefacts</button>
-              </span>
-                     
-              <input type="text"
-                      class="form-control mt-1"
-                      (input)="filterResults()"
-                      placeholder="Search"
-                      [(ngModel)]="search">
+            <h4>Choose your Artifacts</h4>
+            <span>
+              <button *ngIf="byFaction"
+                      (click)="changeByFaction(false)"
+                      class="btn btn-info">Show By Collection</button>
+              <button *ngIf="!byFaction"
+                      (click)="changeByFaction(true)"
+                      class="btn btn-info">Show By Faction</button>
+              <button class="btn btn-danger ml-1"
+                      (click)="resetAll()">Reset All</button>
+              <button (click)="resetArtefacts()"
+                      class="btn btn-danger ml-1">Remove all Artefacts</button>
+            </span>
+
+            <input type="text"
+                   class="form-control mt-1"
+                   (input)="filterResults()"
+                   placeholder="Search"
+                   [(ngModel)]="search">
           </div>
           <div class="card"
                *ngFor="let entry of data">
@@ -181,26 +181,29 @@
                  [ngStyle]="{'background-color': entry.color}"
                  [ngClass]="{'dark-text': byFaction}"
                  (click)="entry.collapsed = !entry.collapsed">
-                 <div class="sectionHeader">
-                    <img *ngIf="entry.icon" src="{{entry.icon}}" width="24px" height="24px" />
-                    <span *ngIf="!entry.icon" style="width: 24px; height: 24px;"></span>
-                    <span>{{entry.label}} - Level {{entry.levelReq}}</span>
-                    <div class="float-right">
-                      <span *ngIf="entry.collapsed"
-                            class="mdi mdi-chevron-up"></span>
-                      <span *ngIf="!entry.collapsed"
-                            class="mdi mdi-chevron-down"></span>
-                    </div>
-                  </div>
+              <div class="sectionHeader">
+                <img *ngIf="entry.icon"
+                     src="{{entry.icon}}"
+                     width="24px"
+                     height="24px" />
+                <span *ngIf="!entry.icon"
+                      style="width: 24px; height: 24px;"></span>
+                <span>{{entry.label}} - Level {{entry.levelReq}}</span>
+                <div class="float-right">
+                  <span *ngIf="entry.collapsed"
+                        class="mdi mdi-chevron-up"></span>
+                  <span *ngIf="!entry.collapsed"
+                        class="mdi mdi-chevron-down"></span>
+                </div>
+              </div>
             </div>
             <div class="card-body"
                  *ngIf="!entry.collapsed">
               <div class="itemsContainer">
-                <div
-                    class="item"
-                    style="border: 1px solid #ccc;"
-                    [ngStyle]="{ background: artefact.quantity > 0 ? '#908b8b': 'inherit'}"
-                    *ngFor="let artefact of entry.artefacts">
+                <div class="item"
+                     style="border: 1px solid #ccc;"
+                     [ngStyle]="{ background: artefact.quantity > 0 ? '#908b8b': 'inherit'}"
+                     *ngFor="let artefact of entry.artefacts">
                   <div class="title">{{artefact.level}} - {{artefact.label | titlecase}}</div>
                   <div class="input-group">
                     <button class="input-group-prepend btn btn-success"
@@ -247,11 +250,11 @@
                   <h4>Required Materials</h4>
                 </span>
                 <div class="material-card-holder"
-                       *ngFor="let material of neededMaterials">
-                    <div>
-                      {{material.quantity}} {{material.type.label}}
-                    </div>
+                     *ngFor="let material of neededMaterials">
+                  <div>
+                    {{material.quantity}} {{material.type.label}}
                   </div>
+                </div>
               </span>
               <span>
                 <span class="dataTitle">
@@ -266,8 +269,8 @@
                   <div class="material-card">
                     <div class="ownedMaterialGrid">
                       <input type="number"
-                          class="form-control"
-                          [(ngModel)]="componentTypes[material.type.id].owned">
+                             class="form-control"
+                             [(ngModel)]="componentTypes[material.type.id].owned">
                       {{material.type.label}}
                     </div>
                   </div>
@@ -279,26 +282,27 @@
                   <ng-template ngFor
                                let-material
                                [ngForOf]="neededMaterials">
-                    <div style="padding: 14px" class="material-card-holder"
+                    <div style="padding: 14px"
+                         class="material-card-holder"
                          *ngIf="!componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity">
                       <div class="material-card">
-                            <span [ngClass]="{'strike-through': componentTypes[material.type.id].done}">
-                              <span *ngIf="componentTypes[material.type.id].owned">
-                                {{material.quantity - componentTypes[material.type.id].owned }}
-                              </span>
-                              <span *ngIf="!componentTypes[material.type.id].owned">
-                                {{material.quantity}}
-                              </span>
-                              {{material.type.label}}
-                            </span>
-                            <div>
-                              <button *ngIf="!componentTypes[material.type.id].done"
-                                      (click)="markComplete(componentTypes[material.type.id])"
-                                      class="btn btn-info btn-block btn-sm">Done</button>
-                              <button *ngIf="componentTypes[material.type.id].done"
-                                      (click)="unmarkComplete(componentTypes[material.type.id])"
-                                      class="btn btn-info btn-blockbtn-sm">Undo</button>
-                            </div>
+                        <span [ngClass]="{'strike-through': componentTypes[material.type.id].done}">
+                          <span *ngIf="componentTypes[material.type.id].owned">
+                            {{material.quantity - componentTypes[material.type.id].owned }}
+                          </span>
+                          <span *ngIf="!componentTypes[material.type.id].owned">
+                            {{material.quantity}}
+                          </span>
+                          {{material.type.label}}
+                        </span>
+                        <div>
+                          <button *ngIf="!componentTypes[material.type.id].done"
+                                  (click)="markComplete(componentTypes[material.type.id])"
+                                  class="btn btn-info btn-block btn-sm">Done</button>
+                          <button *ngIf="componentTypes[material.type.id].done"
+                                  (click)="unmarkComplete(componentTypes[material.type.id])"
+                                  class="btn btn-info btn-blockbtn-sm">Undo</button>
+                        </div>
                       </div>
                     </div>
                   </ng-template>
