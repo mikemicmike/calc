@@ -22,12 +22,11 @@
   }
 
   .calculator {
+    padding: 1em;
+    column-gap: 1em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  }
 
-
-  .calculator {
     .calcHeader {
       padding: .45rem;
     }
@@ -56,6 +55,25 @@
         .input-group {
           padding: 1em;
         }
+      }
+    }
+
+    .calcResults {
+      display: grid;
+      grid-column-gap: 1em;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+
+      .dataTitle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .ownedMaterialGrid {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 3em auto;
       }
     }
   }
@@ -103,14 +121,6 @@ input[type='number']::-webkit-outer-spin-button {
 .material-card {
   border: 1px solid #ccc;
   border-radius: 4px;
-}
-@include media-breakpoint-up(xl) {
-  .material-card-holder:nth-child(odd) {
-    padding-right: 0px;
-  }
-  .material-card-holder:nth-child(even) {
-    padding-left: 0px;
-  }
 }
 
 // .checkmark-container {

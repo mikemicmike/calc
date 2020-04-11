@@ -199,6 +199,7 @@
                 <div
                     class="item"
                     style="border: 1px solid #ccc;"
+                    [ngStyle]="{ background: artefact.quantity > 0 ? '#908b8b': 'inherit'}"
                     *ngFor="let artefact of entry.artefacts">
                   <div class="title">{{artefact.level}} - {{artefact.label | titlecase}}</div>
                   <div class="input-group">
@@ -220,97 +221,90 @@
           </div>
         </div>
         <div>
-          <div class="row">
-            <div class="col">
-              <h2>Results</h2>
-              <h4>Chosen Artefacts</h4>
-            </div>
+          <h2>Results</h2>
+          <div *ngIf="chosenArtefacts.length === 0">
+            <span>No items were chosen.</span>
           </div>
-          <div class="row">
-            <div class="col">
-              <ul class="list-group">
-                <li *ngFor="let artefact of chosenArtefacts"
-                    class="list-group-item">
-                  {{artefact.quantity}} {{artefact.label | titlecase}} ({{artefact.xp}}xp each)
-                </li>
-              </ul>
-              <h6 *ngIf="totalXp">Total XP: {{totalXp | number:'1.0-0'}}</h6>
-              <h6 *ngIf="totalXp">Total XP with Outfit: {{totalXp * 1.06 | number:'1.0-0'}}</h6>
-            </div>
-          </div>
-          <div class="row mt-2">
-            <div class="col">
-              <h4>Required Materials</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-6 material-card-holder"
-                 *ngFor="let material of neededMaterials">
-              <div class="p-2 material-card">
-                {{material.quantity}} {{material.type.label}}
-              </div>
-            </div>
-          </div>
-          <div class="row mt-2">
-            <div class="col">
-              <h4>
-                Owned Materials
-                <button (click)="removeOwnedMaterials()"
-                        class="btn btn-danger">Remove Owned</button>
-              </h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-6 material-card-holder"
-                 *ngFor="let material of neededMaterials">
-              <div class="p-2 material-card">
-                <input type="number"
-                       class="form-control"
-                       style="max-width: 100px; display: inline"
-                       [(ngModel)]="componentTypes[material.type.id].owned">
-                {{material.type.label}}
-              </div>
-            </div>
-          </div>
-          <div class="row mt-2">
-            <div class="col">
-              <h4>Needed Materials</h4>
-            </div>
-          </div>
-          <div class="row">
-            <ng-template ngFor
-                         let-material
-                         [ngForOf]="neededMaterials">
-              <div class="col-xl-6 material-card-holder"
-                   *ngIf="!componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity">
-                <div class="p-2 material-card">
-                  <div class="row">
-                    <div class="col-8 pt-1">
-                      <span [ngClass]="{'strike-through': componentTypes[material.type.id].done}">
-
-                        <span *ngIf="componentTypes[material.type.id].owned">
-                          {{material.quantity - componentTypes[material.type.id].owned }}
-                        </span>
-                        <span *ngIf="!componentTypes[material.type.id].owned">
-                          {{material.quantity}}
-                        </span>
-                        {{material.type.label}}
-                      </span>
+          <div *ngIf="chosenArtefacts.length > 0">
+            <div class="calcResults">
+              <span>
+                <span class="dataTitle">
+                  <h4>Chosen Artefacts</h4>
+                </span>
+                <div>
+                  <ul class="list-group">
+                    <li *ngFor="let artefact of chosenArtefacts"
+                        class="list-group-item">
+                      {{artefact.quantity}} {{artefact.label | titlecase}} ({{artefact.xp}}xp each)
+                    </li>
+                  </ul>
+                  <h6 *ngIf="totalXp">Total XP: {{totalXp | number:'1.0-0'}}</h6>
+                  <h6 *ngIf="totalXp">Total XP with Outfit: {{totalXp * 1.06 | number:'1.0-0'}}</h6>
+                </div>
+              </span>
+              <span>
+                <span class="dataTitle">
+                  <h4>Required Materials</h4>
+                </span>
+                <div class="material-card-holder"
+                       *ngFor="let material of neededMaterials">
+                    <div>
+                      {{material.quantity}} {{material.type.label}}
                     </div>
-                    <div class="col-4">
-                      <div class="pr-2">
-                        <button *ngIf="!componentTypes[material.type.id].done"
-                                (click)="markComplete(componentTypes[material.type.id])"
-                                class="btn btn-info btn-block btn-sm">Done</button>
-                        <button *ngIf="componentTypes[material.type.id].done"
-                                (click)="unmarkComplete(componentTypes[material.type.id])"
-                                class="btn btn-info btn-blockbtn-sm">Undo</button>
-                      </div>
+                  </div>
+              </span>
+              <span>
+                <span class="dataTitle">
+                  <h4>
+                    Owned Materials
+                  </h4>
+                  <button (click)="removeOwnedMaterials()"
+                          class="btn btn-danger">🗑️</button>
+                </span>
+                <div class="material-card-holder"
+                     *ngFor="let material of neededMaterials">
+                  <div class="material-card">
+                    <div class="ownedMaterialGrid">
+                      <input type="number"
+                          class="form-control"
+                          [(ngModel)]="componentTypes[material.type.id].owned">
+                      {{material.type.label}}
                     </div>
                   </div>
                 </div>
-              </div>
-            </ng-template>
+              </span>
+              <span style="grid-column: 1 / span 3;">
+                <h4>Needed Materials</h4>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+                  <ng-template ngFor
+                               let-material
+                               [ngForOf]="neededMaterials">
+                    <div style="padding: 14px" class="material-card-holder"
+                         *ngIf="!componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity">
+                      <div class="material-card">
+                            <span [ngClass]="{'strike-through': componentTypes[material.type.id].done}">
+                              <span *ngIf="componentTypes[material.type.id].owned">
+                                {{material.quantity - componentTypes[material.type.id].owned }}
+                              </span>
+                              <span *ngIf="!componentTypes[material.type.id].owned">
+                                {{material.quantity}}
+                              </span>
+                              {{material.type.label}}
+                            </span>
+                            <div>
+                              <button *ngIf="!componentTypes[material.type.id].done"
+                                      (click)="markComplete(componentTypes[material.type.id])"
+                                      class="btn btn-info btn-block btn-sm">Done</button>
+                              <button *ngIf="componentTypes[material.type.id].done"
+                                      (click)="unmarkComplete(componentTypes[material.type.id])"
+                                      class="btn btn-info btn-blockbtn-sm">Undo</button>
+                            </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                </div>
+              </span>
+            </div>
           </div>
         </div>
       </div>
