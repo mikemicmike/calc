@@ -28,7 +28,7 @@
     grid-template-columns: repeat(2, 1fr);
 
     .calcHeader {
-      padding: .45rem;
+      padding: 0.45rem;
     }
 
     .sectionHeader {
@@ -54,6 +54,7 @@
 
         .input-group {
           padding: 1em;
+          padding-top: 0;
         }
       }
     }
