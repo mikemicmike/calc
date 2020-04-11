@@ -141,7 +141,7 @@ export class AppComponent implements OnInit {
     const w_artefact2 = this.getHighestLevelArtefact(this.targetLevel - 1);
     this.addArtefactsToNeededArtefacts({
       level: w_artefact2.level,
-      quantity: w_neededXp2 / w_artefact2.xp
+      quantity: (w_neededXp2 * 0.8) / (w_artefact2.xp * this.xpModifier)
     });
   }
 
