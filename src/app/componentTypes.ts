@@ -177,7 +177,7 @@ const componentTypes = {
   },
   weaponPoison: {
     id: 'weaponPoison',
-    label: 'Weapon Poison'
+    label: 'Weapon Poison(3)'
   },
   rope: {
     id: 'rope',

@@ -12,22 +12,145 @@
                 class="btn btn-info float-right"
                 (click)="toggleDarkMode(false)">Light Mode</button>
       </h1>
-      <p>
-        Here is just a tool I quickly put together to calculate the materials needed for given artefacts.
-        <br>
-        Simply select what artefacts you plan on making and at the list of the materials you need will appear.
+      <div class="row">
+        <div class="col-lg-6">
+          <p>
+            Here is just a tool I quickly put together to calculate the materials needed for given artefacts.
+            <br>
+            Simply select what artefacts you plan on making and at the list of the materials you need will appear.
 
-        <br>
+            <br>
 
-        All artefacts have been added!
+            All artefacts have been added!
 
-        <br>
-        If you notice any issues please let me know in game or tag me in Archaeology discord!
-        <br>
-        Special thanks to KhaleesiZara for helping me with this!
-        <br>
-        Mikemicmike
-      </p>
+            <br>
+            If you notice any issues please let me know in game or tag me in Archaeology discord!
+            <br>
+            Special thanks to KhaleesiZara for helping me with this!
+            <br>
+            Mikemicmike
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header"
+                 style="cursor: pointer;"
+                 (click)="toggleXpCalcCollapse()">
+              <strong>
+                XP Calculator
+              </strong>
+              <div class="float-right">
+                <button *ngIf="!xpCalcCollapsed && byLevel"
+                        class="btn btn-info btn-sm"
+                        (click)="swapTarget($event)">Use Target XP</button>
+                <button *ngIf="!xpCalcCollapsed && !byLevel"
+                        class="btn btn-info btn-sm"
+                        (click)="swapTarget($event)">Use Target Level</button>
+                <span *ngIf="xpCalcCollapsed"
+                      class="ml-2 mdi mdi-chevron-up"></span>
+                <span *ngIf="!xpCalcCollapsed"
+                      class="ml-2 mdi mdi-chevron-down"></span>
+              </div>
+            </div>
+            <div class="card-body"
+                 *ngIf="!xpCalcCollapsed">
+              <div class="row">
+                <div class="col">
+                  <p>
+                    This calculator assumes 20% of the xp each level will come from excavating artefacts. This number is an estimate. If you feel it is wrong please let me
+                    know in game or tag me in the Archaeology Discord.
+                  </p>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="currentxp"
+                       class="col-sm-2 col-form-label">Current XP</label>
+                <div class="col-sm-6">
+                  <input type="number"
+                         class="form-control form-control-sm"
+                         [(ngModel)]="currentXp"
+                         (input)="currentXpChanged()"
+                         id="currentxp"
+                         placeholder="Current XP">
+                </div>
+                <div class="col-sm-4"
+                     *ngIf="currentLevel">
+                  Level {{currentLevel}}
+                </div>
+              </div>
+              <div *ngIf="byLevel"
+                   class="form-group row">
+                <label for="targetLevel"
+                       class="col-sm-2 col-form-label">Target Level</label>
+                <div class="col-sm-6">
+                  <input type="number"
+                         class="form-control form-control-sm"
+                         [(ngModel)]="targetLevel"
+                         (input)="targetLevelChanged()"
+                         id="targetLevel"
+                         placeholder="Target Level">
+                </div>
+                <div class="col-sm-4"
+                     *ngIf="targetXp">
+                  {{targetXp | number}} XP
+                </div>
+              </div>
+              <div *ngIf="!byLevel"
+                   class="form-group row">
+                <label for="targetXp"
+                       class="col-sm-2 col-form-label">Target XP</label>
+                <div class="col-sm-6">
+                  <input type="number"
+                         class="form-control form-control-sm"
+                         [(ngModel)]="targetXp"
+                         (input)="targetXpChanged()"
+                         id="targetXp"
+                         placeholder="Target XP">
+                </div>
+                <div class="col-sm-4"
+                     *ngIf="targetLevel">
+                  Level {{targetLevel}}
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="targetLevel"
+                       class="col-sm-2 col-form-label">Outfit Pieces</label>
+                <div class="col-sm-6">
+                  <input type="number"
+                         class="form-control form-control-sm"
+                         [(ngModel)]="outfitPieces"
+                         (input)="outfitPiecesChanged()"
+                         id="outfitPieces"
+                         placeholder="Outfit Pieces">
+                </div>
+                <div class="col-sm-4">
+                  Modifier: {{xpModifier}}
+                </div>
+              </div>
+              <table *ngIf="neededArtefacts.length"
+                     class="table table-condensed table-striped table-bordered">
+                <tr>
+                  <th style="width: 100px;">
+                    Quantity
+                  </th>
+                  <th>
+                    Artefact Level
+                  </th>
+                </tr>
+                <tr *ngFor="let artefact of neededArtefacts">
+                  <td style="width: 100px;">
+                    {{artefact.quantity | number:"0.0-1"}}
+                  </td>
+                  <td>
+                    Level {{artefact.level}} Artefacts
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-md-6">
           <h2>Choose your Artefacts
@@ -37,6 +160,8 @@
             <button *ngIf="!byFaction"
                     (click)="changeByFaction(true)"
                     class="btn btn-info">Show By Faction</button>
+            <button class="btn btn-danger ml-1"
+                    (click)="resetAll()">Reset All</button>
             <button (click)="resetArtefacts()"
                     class="btn btn-danger ml-1">Remove all Artefacts</button>
             <input type="text"
@@ -107,7 +232,7 @@
               <h6 *ngIf="totalXp">Total XP with Outfit: {{totalXp * 1.06 | number:'1.0-0'}}</h6>
             </div>
           </div>
-          <div class="row">
+          <div class="row mt-2">
             <div class="col">
               <h4>Required Materials</h4>
             </div>
@@ -120,7 +245,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row mt-2">
             <div class="col">
               <h4>
                 Owned Materials
@@ -141,7 +266,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row mt-2">
             <div class="col">
               <h4>Needed Materials</h4>
             </div>
@@ -154,7 +279,7 @@
                    *ngIf="!componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity">
                 <div class="p-2 material-card">
                   <div class="row">
-                    <div class="col-8">
+                    <div class="col-8 pt-1">
                       <span [ngClass]="{'strike-through': componentTypes[material.type.id].done}">
 
                         <span *ngIf="componentTypes[material.type.id].owned">
@@ -170,10 +295,10 @@
                       <div class="pr-2">
                         <button *ngIf="!componentTypes[material.type.id].done"
                                 (click)="markComplete(componentTypes[material.type.id])"
-                                class="btn btn-info btn-block">Done</button>
+                                class="btn btn-info btn-block btn-sm">Done</button>
                         <button *ngIf="componentTypes[material.type.id].done"
                                 (click)="unmarkComplete(componentTypes[material.type.id])"
-                                class="btn btn-info btn-block">Undo</button>
+                                class="btn btn-info btn-blockbtn-sm">Undo</button>
                       </div>
                     </div>
                   </div>

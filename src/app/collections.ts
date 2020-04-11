@@ -71,7 +71,7 @@ const collections = {
     id: 'greenGobboGoodiesII',
     label: 'Green Gobbo Goodies II',
     collector: collectors.generalWartface,
-    levelReq: 100
+    levelReq: 97
   },
   greenGobboGoodiesIII: {
     id: 'greenGobboGoodiesIII',

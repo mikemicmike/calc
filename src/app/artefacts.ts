@@ -489,10 +489,6 @@ const Artefacts = [
       {
         type: componentTypes.hellfireMetal,
         quantity: 20
-      },
-      {
-        type: componentTypes.whiteCandle,
-        quantity: 1
       }
     ],
     level: 45,
@@ -2337,7 +2333,7 @@ const Artefacts = [
     xp: 15833.3,
     faction: factions.bandosian.id,
     collections: [
-      collections.greenGobboGoodiesII.id,
+      collections.redRumRelicsII.id,
       collections.museumBandosianII.id
     ],
     quantity: 0
