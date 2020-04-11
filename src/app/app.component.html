@@ -181,14 +181,17 @@
                  [ngStyle]="{'background-color': entry.color}"
                  [ngClass]="{'dark-text': byFaction}"
                  (click)="entry.collapsed = !entry.collapsed">
-              <h5>{{entry.label}} - Level {{entry.levelReq}}
-                <div class="float-right">
-                  <span *ngIf="entry.collapsed"
-                        class="mdi mdi-chevron-up"></span>
-                  <span *ngIf="!entry.collapsed"
-                        class="mdi mdi-chevron-down"></span>
-                </div>
-              </h5>
+                 <div class="sectionHeader">
+                    <img *ngIf="entry.icon" src="{{entry.icon}}" width="24px" height="24px" />
+                    <span *ngIf="!entry.icon" style="width: 24px; height: 24px;"></span>
+                    <span>{{entry.label}} - Level {{entry.levelReq}}</span>
+                    <div class="float-right">
+                      <span *ngIf="entry.collapsed"
+                            class="mdi mdi-chevron-up"></span>
+                      <span *ngIf="!entry.collapsed"
+                            class="mdi mdi-chevron-down"></span>
+                    </div>
+                  </div>
             </div>
             <div class="card-body"
                  *ngIf="!entry.collapsed">

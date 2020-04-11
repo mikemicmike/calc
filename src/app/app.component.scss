@@ -32,6 +32,12 @@
       padding: .45rem;
     }
 
+    .sectionHeader {
+      display: grid;
+      grid-template-columns: 36px auto 30px;
+      align-items: center;
+    }
+
     .itemsContainer {
       display: grid;
       grid-template-columns: repeat(3, 1fr);

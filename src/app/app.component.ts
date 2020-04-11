@@ -51,6 +51,7 @@ export class AppComponent implements OnInit {
     artefacts: IArtefact[];
     label: string;
     color: string;
+    icon: string;
     collapsed: boolean;
     levelReq: number;
   }[];
@@ -278,6 +279,7 @@ export class AppComponent implements OnInit {
           });
           if (a_artefactsToAdd.length) {
             this.data.push({
+              icon: w_faction.icon,
               label: w_faction.label,
               color: w_faction.color,
               artefacts: a_artefactsToAdd,
@@ -304,6 +306,7 @@ export class AppComponent implements OnInit {
           });
           if (a_artefactsToAdd.length) {
             this.data.push({
+              icon: w_collection.icon,
               label: w_collection.label,
               color: w_collection.collector.color,
               artefacts: a_artefactsToAdd,
