@@ -61,8 +61,8 @@
 
     .calcResults {
       display: grid;
-      grid-column-gap: 1em;
-      grid-template-columns: repeat(3, 1fr);
+      gap: 1em;
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto auto;
 
       .dataTitle {
@@ -75,6 +75,11 @@
         display: grid;
         gap: 1em;
         grid-template-columns: 3em auto;
+      }
+
+      .neededContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   }
