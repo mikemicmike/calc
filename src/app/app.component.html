@@ -362,10 +362,13 @@
                          [ngForOf]="neededMaterials">
               <div class="col-xl-6 material-card-holder"
                    *ngIf="!componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity">
-                <div class="p-2 material-card">
+                <div 
+                  class="p-2 material-card material-needed"
+                  [ngClass]="{'done': componentTypes[material.type.id].done}"
+                  (click)="toggleComplete(componentTypes[material.type.id])">
                   <div class="row">
-                    <div class="col-8 pt-1">
-                      <span [ngClass]="{'strike-through': componentTypes[material.type.id].done}">
+                    <div class="col-12 pt-1">
+                      <span>
                         <div class="d-inline-block"
                              style="width: 30px;">
                           <img [src]="material.type.image"
@@ -380,16 +383,6 @@
                         </span>
                         {{material.type.label}}
                       </span>
-                    </div>
-                    <div class="col-4">
-                      <div class="pr-2">
-                        <button *ngIf="!componentTypes[material.type.id].done"
-                                (click)="markComplete(componentTypes[material.type.id])"
-                                class="btn btn-info btn-block btn-sm">Done</button>
-                        <button *ngIf="componentTypes[material.type.id].done"
-                                (click)="unmarkComplete(componentTypes[material.type.id])"
-                                class="btn btn-info btn-block btn-sm">Undo</button>
-                      </div>
                     </div>
                   </div>
                 </div>

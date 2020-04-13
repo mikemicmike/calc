@@ -260,12 +260,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  public markComplete(p_componentType: any): void {
-    p_componentType.done = true;
-  }
-
-  public unmarkComplete(p_componentType: any): void {
-    p_componentType.done = false;
+  public toggleComplete(p_componentType: any): void {
+    p_componentType.done = !p_componentType.done;
   }
 
   public filterResults(): void {

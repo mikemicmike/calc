@@ -49,9 +49,16 @@ input[type='number']::-webkit-outer-spin-button {
 .text-warning {
   color: #ec7513 !important;
 }
-.strike-through {
-  text-decoration: line-through;
+
+.dark .done {
+  background-color: #2e5e05;
+  color: #ecf8e3;
 }
+
+.done {
+  background-color: #c3e8a3;
+}
+
 .selected-artefact {
   background-color: #ddd;
 }
@@ -83,7 +90,17 @@ input[type='number']::-webkit-outer-spin-button {
 .material-card {
   border: 1px solid #ccc;
   border-radius: 4px;
+  cursor: default;
+
+  .dark &.material-needed:hover {
+    background-color: #3c780a;
+  }
+  
+  &.material-needed:hover {
+    background-color: #ecf8e3;
+  }
 }
+
 @include media-breakpoint-up(xl) {
   .material-card-holder:nth-child(odd) {
     padding-right: 0px;
