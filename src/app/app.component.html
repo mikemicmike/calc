@@ -59,6 +59,11 @@
                   <p>
                     This calculator assumes 20% of the xp each level will come from excavating artefacts. This number is an estimate. If you feel it is wrong please let me
                     know in game or tag me in the Archaeology Discord.
+                    <br>
+                    <span class="text-warning">
+                      The calculator assumes you will be doing the highest artefacts for your level. You will need to do all of the artefacts listed below to achieve your
+                      goal.
+                    </span>
                   </p>
                 </div>
               </div>
@@ -189,22 +194,29 @@
             <div class="card-body"
                  *ngIf="!entry.collapsed">
               <div class="row">
-                <div class="col-xl-3 col-sm-6 col-12 pb-2"
-                     style="border: 1px solid #ccc;"
+                <div class="col-xl-4 col-sm-6 col-12"
                      *ngFor="let artefact of entry.artefacts">
-                  <span>{{artefact.level}} - {{artefact.label | titlecase}}</span>
-                  <br>
-                  <div class="input-group">
+                  <div class="p-2 mb-2 d-flex flex-column"
+                       [ngClass]="{'selected-artefact': artefact.quantity}"
+                       style="border: 1px solid #ccc; border-radius: 0.25em; min-height: 125px;">
+                    <div class="text-center flex-grow-1">
+                      <img [src]="artefact.image"
+                           [alt]="artefact.label"
+                           class="mr-2">
+                      <span>{{artefact.level}} - {{artefact.label | titlecase}}</span>
+                    </div>
+                    <div class="input-group mt-2 mb-2">
 
-                    <button class="input-group-prepend btn btn-success"
-                            [disabled]="artefact.quantity === 0"
-                            (click)="removeArtefact(artefact)"><span class="mdi mdi-minus"></span></button>
-                    <input type="number"
-                           class="form-control"
-                           (input)="calculateTotals()"
-                           [(ngModel)]="artefact.quantity">
-                    <button class="input-group-append btn btn-success"
-                            (click)="addArtefact(artefact)"><span class="mdi mdi-plus"></span></button>
+                      <button class="input-group-prepend btn btn-success"
+                              [disabled]="artefact.quantity === 0"
+                              (click)="removeArtefact(artefact)"><span class="mdi mdi-minus"></span></button>
+                      <input type="number"
+                             class="form-control"
+                             (input)="calculateTotals()"
+                             [(ngModel)]="artefact.quantity">
+                      <button class="input-group-append btn btn-success"
+                              (click)="addArtefact(artefact)"><span class="mdi mdi-plus"></span></button>
+                    </div>
                   </div>
                 </div>
               </div>

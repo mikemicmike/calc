@@ -16,8 +16,14 @@ input[type='number']::-webkit-outer-spin-button {
   flex: 1 0 auto;
 }
 
+.text-warning {
+  color: #ec7513 !important;
+}
 .strike-through {
   text-decoration: line-through;
+}
+.selected-artefact {
+  background-color: #ddd;
 }
 
 .dark {
@@ -38,6 +44,9 @@ input[type='number']::-webkit-outer-spin-button {
 
   .dark-text {
     color: black;
+  }
+  .selected-artefact {
+    background-color: #888;
   }
 }
 

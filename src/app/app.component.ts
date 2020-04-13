@@ -16,6 +16,7 @@ interface IArtefact {
   components: IComponent[];
   quantity: number;
   collections: string[];
+  image: string;
   xp: number;
   level: number;
   faction: string;
@@ -23,7 +24,7 @@ interface IArtefact {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   public xpCalcCollapsed: boolean;
@@ -123,7 +124,7 @@ export class AppComponent implements OnInit {
       }
       this.addArtefactsToNeededArtefacts({
         level: w_artefact.level,
-        quantity: (w_neededXp * 0.8) / (w_artefact.xp * this.xpModifier)
+        quantity: (w_neededXp * 0.8) / (w_artefact.xp * this.xpModifier),
       });
       w_currentMaxLevelHandled = x_index;
       console.log(
@@ -141,7 +142,7 @@ export class AppComponent implements OnInit {
     const w_artefact2 = this.getHighestLevelArtefact(this.targetLevel - 1);
     this.addArtefactsToNeededArtefacts({
       level: w_artefact2.level,
-      quantity: (w_neededXp2 * 0.8) / (w_artefact2.xp * this.xpModifier)
+      quantity: (w_neededXp2 * 0.8) / (w_artefact2.xp * this.xpModifier),
     });
   }
 
@@ -282,7 +283,7 @@ export class AppComponent implements OnInit {
               color: w_faction.color,
               artefacts: a_artefactsToAdd,
               collapsed: !this.search,
-              levelReq: w_faction.levelReq
+              levelReq: w_faction.levelReq,
             });
           }
         }
@@ -308,7 +309,7 @@ export class AppComponent implements OnInit {
               color: w_collection.collector.color,
               artefacts: a_artefactsToAdd,
               collapsed: !this.search,
-              levelReq: w_collection.levelReq
+              levelReq: w_collection.levelReq,
             });
           }
         }
