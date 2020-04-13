@@ -39,5 +39,13 @@ const factions = {
       'https://runescape.wiki/images/thumb/d/d9/Bandos_symbol.png/25px-Bandos_symbol.png',
     levelReq: 76,
   },
+  miscelaneous: {
+    id: 'miscellaneous',
+    label: 'Miscellaneous',
+    color: '#999',
+    icon:
+      'https://runescape.wiki/images/4/46/Tetracompass_%28unpowered%29.png?f9460',
+    levelReq: 50,
+  },
 };
 export { factions };
