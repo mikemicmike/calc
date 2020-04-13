@@ -169,7 +169,10 @@ export class AppComponent implements OnInit {
       x_artefact--
     ) {
       const w_artefact = this.artefacts[x_artefact];
-      if (p_level >= w_artefact.level) {
+      if (
+        p_level >= w_artefact.level &&
+        w_artefact.faction !== factions.miscelaneous.id
+      ) {
         return w_artefact;
       }
     }
@@ -320,7 +323,7 @@ export class AppComponent implements OnInit {
               artefacts: a_artefactsToAdd,
               collapsed: !this.search,
               levelReq: w_collection.levelReq,
-              icon: null,
+              icon: w_collection.collector.image,
             });
           }
         }

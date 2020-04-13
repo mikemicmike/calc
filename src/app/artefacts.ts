@@ -661,6 +661,38 @@ const Artefacts = [
     quantity: 0,
   },
   {
+    label: 'Tetracompass',
+    components: [
+      {
+        type: componentTypes.malachiteGreen,
+        quantity: 30,
+      },
+      {
+        type: componentTypes.cadmiumRed,
+        quantity: 30,
+      },
+      {
+        type: componentTypes.cobaltBlue,
+        quantity: 30,
+      },
+      {
+        type: componentTypes.armadyleanYellow,
+        quantity: 30,
+      },
+      {
+        type: componentTypes.tyrianPurple,
+        quantity: 30,
+      },
+    ],
+    level: 50,
+    image:
+      'https://runescape.wiki/images/4/46/Tetracompass_%28unpowered%29.png?f9460',
+    xp: 2065,
+    faction: factions.miscelaneous.id,
+    collections: [],
+    quantity: 0,
+  },
+  {
     label: 'Everlight Harp',
     components: [
       {

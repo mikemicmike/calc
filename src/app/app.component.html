@@ -24,9 +24,9 @@
             All artefacts have been added!
 
             <br>
-            If you notice any issues please let me know in game or tag me in Archaeology discord!
+            Special thanks to KhaleesiZara & Anilokip4 for helping me with this!
             <br>
-            Special thanks to KhaleesiZara for helping me with this!
+            If you notice any issues please let me know in game or tag me in Archaeology discord!
             <br>
             Mikemicmike
           </p>
@@ -162,7 +162,7 @@
               </strong>
               <div class="float-right">
                 <button *ngIf="!materialBankCollapsed"
-                        class="btn btn-info btn-sm"
+                        class="btn btn-danger btn-sm"
                         (click)="removeOwnedMaterials($event)">Clear Owned</button>
                 <span *ngIf="materialBankCollapsed"
                       class="ml-2 mdi mdi-chevron-up"></span>
@@ -176,7 +176,7 @@
                 <div class="col">
                   <p>
                     This area is simply here in case you wish to add all of your materials instead of just the ones needed for certain artefacts. This will automatically be
-                    reflected and linked to your owned materials.
+                    linked to your owned materials.
                   </p>
                 </div>
               </div>
@@ -186,8 +186,14 @@
                   <div class="p-2 material-card">
                     <input type="number"
                            class="form-control mr-2"
-                           style="max-width: 100px; display: inline"
+                           style="max-width: 80px; display: inline"
                            [(ngModel)]="material.value.owned">
+                    <div class="d-inline-block"
+                         style="width: 30px;">
+                      <img [src]="material.value.image"
+                           [alt]="material.value.label"
+                           class="mr-2">
+                    </div>
                     {{material.value.label}}
                   </div>
                 </div>
@@ -229,6 +235,7 @@
                   <img *ngIf="entry.icon"
                        [src]="entry.icon"
                        [alt]="entry.label"
+                       style="max-width: 36px; max-height: 36px;"
                        class="mr-2">
                 </div>
                 <div class="d-inline">
@@ -288,6 +295,9 @@
               <ul class="list-group">
                 <li *ngFor="let artefact of chosenArtefacts"
                     class="list-group-item">
+                  <img [src]="artefact.image"
+                       [alt]="artefact.label"
+                       class="mr-2">
                   {{artefact.quantity}} {{artefact.label | titlecase}} ({{artefact.xp}}xp each)
                 </li>
               </ul>
@@ -304,6 +314,12 @@
             <div class="col-xl-6 material-card-holder"
                  *ngFor="let material of neededMaterials">
               <div class="p-2 material-card">
+                <div class="d-inline-block"
+                     style="width: 30px;">
+                  <img [src]="material.type.image"
+                       [alt]="material.type.label"
+                       class="mr-2">
+                </div>
                 {{material.quantity}} {{material.type.label}}
               </div>
             </div>
@@ -322,9 +338,15 @@
                  *ngFor="let material of neededMaterials">
               <div class="p-2 material-card">
                 <input type="number"
-                       class="form-control"
-                       style="max-width: 100px; display: inline"
+                       class="form-control mr-2"
+                       style="max-width: 80px; display: inline"
                        [(ngModel)]="componentTypes[material.type.id].owned">
+                <div class="d-inline-block"
+                     style="width: 30px;">
+                  <img [src]="material.type.image"
+                       [alt]="material.type.label"
+                       class="mr-2">
+                </div>
                 {{material.type.label}}
               </div>
             </div>
@@ -344,7 +366,12 @@
                   <div class="row">
                     <div class="col-8 pt-1">
                       <span [ngClass]="{'strike-through': componentTypes[material.type.id].done}">
-
+                        <div class="d-inline-block"
+                             style="width: 30px;">
+                          <img [src]="material.type.image"
+                               [alt]="material.type.label"
+                               class="mr-2">
+                        </div>
                         <span *ngIf="componentTypes[material.type.id].owned">
                           {{material.quantity - componentTypes[material.type.id].owned }}
                         </span>
@@ -361,7 +388,7 @@
                                 class="btn btn-info btn-block btn-sm">Done</button>
                         <button *ngIf="componentTypes[material.type.id].done"
                                 (click)="unmarkComplete(componentTypes[material.type.id])"
-                                class="btn btn-info btn-blockbtn-sm">Undo</button>
+                                class="btn btn-info btn-block btn-sm">Undo</button>
                       </div>
                     </div>
                   </div>
