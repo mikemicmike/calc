@@ -96,7 +96,7 @@ const componentTypes = {
   },
   everlightSilvithril: {
     id: 'everlightSilvithril',
-    label: 'Everlight Silvithril',
+    label: 'Everlight Silvthril',
     image: 'https://runescape.wiki/images/1/15/Everlight_silvthril.png?ff6b9',
   },
   starOfSaradomin: {

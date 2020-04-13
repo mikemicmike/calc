@@ -44,7 +44,7 @@ const factions = {
     label: 'Miscellaneous',
     color: '#999',
     icon:
-      'https://runescape.wiki/images/4/46/Tetracompass_%28unpowered%29.png?f9460',
+      'https://runescape.wiki/images/3/35/Tetracompass_%28powered%29_detail.png?ca3cb',
     levelReq: 50,
   },
 };
