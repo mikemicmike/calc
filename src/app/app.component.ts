@@ -27,7 +27,8 @@ interface IArtefact {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  public xpCalcCollapsed: boolean;
+  public xpCalcCollapsed: boolean = true;
+  public materialBankCollapsed: boolean = true;
   public byLevel: boolean = true;
   public componentTypes: typeof componentTypes = componentTypes;
   public currentXp: number;
@@ -54,6 +55,7 @@ export class AppComponent implements OnInit {
     color: string;
     collapsed: boolean;
     levelReq: number;
+    icon: string;
   }[];
 
   public constructor(private _httpClient: HttpClient) {}
@@ -191,6 +193,9 @@ export class AppComponent implements OnInit {
   public toggleXpCalcCollapse(): void {
     this.xpCalcCollapsed = !this.xpCalcCollapsed;
   }
+  public toggleMaterialBank(): void {
+    this.materialBankCollapsed = !this.materialBankCollapsed;
+  }
   public swapTarget(p_event: MouseEvent): void {
     this.byLevel = !this.byLevel;
     p_event.preventDefault();
@@ -202,13 +207,17 @@ export class AppComponent implements OnInit {
     });
     this.calculateTotals();
   }
-  public removeOwnedMaterials(): void {
+  public removeOwnedMaterials(p_event?: MouseEvent): void {
     for (const w_key in this.componentTypes) {
       if (this.componentTypes.hasOwnProperty(w_key)) {
         const w_type = this.componentTypes[w_key];
         w_type.owned = null;
         w_type.done = false;
       }
+    }
+    if (p_event) {
+      p_event.preventDefault();
+      p_event.stopPropagation();
     }
   }
   public removeArtefact(p_artefact: IArtefact): void {
@@ -284,6 +293,7 @@ export class AppComponent implements OnInit {
               artefacts: a_artefactsToAdd,
               collapsed: !this.search,
               levelReq: w_faction.levelReq,
+              icon: w_faction.icon,
             });
           }
         }
@@ -310,6 +320,7 @@ export class AppComponent implements OnInit {
               artefacts: a_artefactsToAdd,
               collapsed: !this.search,
               levelReq: w_collection.levelReq,
+              icon: null,
             });
           }
         }

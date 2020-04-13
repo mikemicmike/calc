@@ -153,6 +153,47 @@
               </table>
             </div>
           </div>
+          <div class="card mt-2">
+            <div class="card-header"
+                 style="cursor: pointer;"
+                 (click)="toggleMaterialBank()">
+              <strong>
+                Material Bank
+              </strong>
+              <div class="float-right">
+                <button *ngIf="!materialBankCollapsed"
+                        class="btn btn-info btn-sm"
+                        (click)="removeOwnedMaterials($event)">Clear Owned</button>
+                <span *ngIf="materialBankCollapsed"
+                      class="ml-2 mdi mdi-chevron-up"></span>
+                <span *ngIf="!materialBankCollapsed"
+                      class="ml-2 mdi mdi-chevron-down"></span>
+              </div>
+            </div>
+            <div class="card-body"
+                 *ngIf="!materialBankCollapsed">
+              <div class="row">
+                <div class="col">
+                  <p>
+                    This area is simply here in case you wish to add all of your materials instead of just the ones needed for certain artefacts. This will automatically be
+                    reflected and linked to your owned materials.
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 material-card-holder"
+                     *ngFor="let material of componentTypes | keyvalue">
+                  <div class="p-2 material-card">
+                    <input type="number"
+                           class="form-control mr-2"
+                           style="max-width: 100px; display: inline"
+                           [(ngModel)]="material.value.owned">
+                    {{material.value.label}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -182,12 +223,22 @@
                  [ngStyle]="{'background-color': entry.color}"
                  [ngClass]="{'dark-text': byFaction}"
                  (click)="entry.collapsed = !entry.collapsed">
-              <h4>{{entry.label}} - Level {{entry.levelReq}}
-                <div class="float-right">
-                  <span *ngIf="entry.collapsed"
-                        class="mdi mdi-chevron-up"></span>
-                  <span *ngIf="!entry.collapsed"
-                        class="mdi mdi-chevron-down"></span>
+              <h4>
+                <div style="width: 70px"
+                     class="d-inline-block text-center">
+                  <img *ngIf="entry.icon"
+                       [src]="entry.icon"
+                       [alt]="entry.label"
+                       class="mr-2">
+                </div>
+                <div class="d-inline">
+                  {{entry.label}} - Level {{entry.levelReq}}
+                  <div class="float-right">
+                    <span *ngIf="entry.collapsed"
+                          class="mdi mdi-chevron-up"></span>
+                    <span *ngIf="!entry.collapsed"
+                          class="mdi mdi-chevron-down"></span>
+                  </div>
                 </div>
               </h4>
             </div>
