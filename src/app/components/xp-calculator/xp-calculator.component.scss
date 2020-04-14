@@ -1,0 +1,11 @@
+@import './src/assets/mixins';
+.xp-calculator {
+  .card-body {
+    @include card-floating-body();
+  }
+  z-index: 999;
+}
+
+.text-warning {
+  color: #ec7513 !important;
+}

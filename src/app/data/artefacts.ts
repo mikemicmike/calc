@@ -2,7 +2,7 @@ import { componentTypes } from './componentTypes';
 import { factions } from './factions';
 import { collections } from './collections';
 
-const Artefacts = [
+const artefacts = [
   {
     label: 'Venator Dagger',
     components: [
@@ -2367,7 +2367,7 @@ const Artefacts = [
         quantity: 24,
       },
       {
-        type: componentTypes.soapstone,
+        type: componentTypes.warforgedBronze,
         quantity: 30,
       },
     ],
@@ -3930,4 +3930,4 @@ const Artefacts = [
     quantity: 0,
   },
 ];
-export { Artefacts };
+export { artefacts };

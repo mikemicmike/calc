@@ -1,0 +1,121 @@
+<div class="card xp-calculator">
+  <div class="card-header"
+       style="cursor: pointer;"
+       (click)="toggleXpCalcCollapse()">
+    <strong>
+      XP Calculator
+    </strong>
+    <div class="float-right">
+      <button *ngIf="!xpCalcCollapsed && byLevel"
+              class="btn btn-info btn-sm"
+              (click)="swapTarget($event)">Use Target XP</button>
+      <button *ngIf="!xpCalcCollapsed && !byLevel"
+              class="btn btn-info btn-sm"
+              (click)="swapTarget($event)">Use Target Level</button>
+      <span *ngIf="xpCalcCollapsed"
+            class="ml-2 mdi mdi-chevron-up"></span>
+      <span *ngIf="!xpCalcCollapsed"
+            class="ml-2 mdi mdi-chevron-down"></span>
+    </div>
+  </div>
+  <div class="card-body"
+       *ngIf="!xpCalcCollapsed">
+    <div class="row">
+      <div class="col">
+        <p>
+          This calculator assumes 20% of the xp each level will come from excavating artefacts. This number is an estimate. If you feel it is wrong please let me
+          know in game or tag me in the Archaeology Discord.
+          <br>
+          <span class="text-warning">
+            The calculator assumes you will be doing the highest artefacts for your level. You will need to do all of the artefacts listed below to achieve your
+            goal.
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="currentxp"
+             class="col-sm-2 col-form-label">Current XP</label>
+      <div class="col-sm-6">
+        <input type="number"
+               class="form-control form-control-sm"
+               [(ngModel)]="currentXp"
+               (input)="currentXpChanged()"
+               id="currentxp"
+               placeholder="Current XP">
+      </div>
+      <div class="col-sm-4"
+           *ngIf="currentLevel">
+        Level {{currentLevel}}
+      </div>
+    </div>
+    <div *ngIf="byLevel"
+         class="form-group row">
+      <label for="targetLevel"
+             class="col-sm-2 col-form-label">Target Level</label>
+      <div class="col-sm-6">
+        <input type="number"
+               class="form-control form-control-sm"
+               [(ngModel)]="targetLevel"
+               (input)="targetLevelChanged()"
+               id="targetLevel"
+               placeholder="Target Level">
+      </div>
+      <div class="col-sm-4"
+           *ngIf="targetXp">
+        {{targetXp | number}} XP
+      </div>
+    </div>
+    <div *ngIf="!byLevel"
+         class="form-group row">
+      <label for="targetXp"
+             class="col-sm-2 col-form-label">Target XP</label>
+      <div class="col-sm-6">
+        <input type="number"
+               class="form-control form-control-sm"
+               [(ngModel)]="targetXp"
+               (input)="targetXpChanged()"
+               id="targetXp"
+               placeholder="Target XP">
+      </div>
+      <div class="col-sm-4"
+           *ngIf="targetLevel">
+        Level {{targetLevel}}
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="targetLevel"
+             class="col-sm-2 col-form-label">Outfit Pieces</label>
+      <div class="col-sm-6">
+        <input type="number"
+               class="form-control form-control-sm"
+               [(ngModel)]="outfitPieces"
+               (input)="outfitPiecesChanged()"
+               id="outfitPieces"
+               placeholder="Outfit Pieces">
+      </div>
+      <div class="col-sm-4">
+        Modifier: {{xpModifier}}
+      </div>
+    </div>
+    <table *ngIf="neededArtefacts.length"
+           class="table table-condensed table-striped table-bordered">
+      <tr>
+        <th style="width: 100px;">
+          Quantity
+        </th>
+        <th>
+          Artefact Level
+        </th>
+      </tr>
+      <tr *ngFor="let artefact of neededArtefacts">
+        <td style="width: 100px;">
+          {{artefact.quantity | number:"0.0-1"}}
+        </td>
+        <td>
+          Level {{artefact.level}} Artefacts
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

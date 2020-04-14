@@ -1,0 +1,24 @@
+<div [class.dark]="dark">
+  <div class="p-2 mb-2 d-flex flex-column"
+       [ngClass]="{'selected-artefact': artefact.quantity}"
+       style="border: 1px solid #ccc; border-radius: 0.25em; min-height: 125px;">
+    <div class="text-center flex-grow-1">
+      <img [src]="artefact.image"
+           [alt]="artefact.label"
+           class="mr-2">
+      <span>{{artefact.level}} - {{artefact.label | titlecase}}</span>
+    </div>
+    <div class="input-group mt-2 mb-2">
+
+      <button class="input-group-prepend btn btn-success"
+              [disabled]="artefact.quantity === 0"
+              (click)="store.removeArtefact(artefact)"><span class="mdi mdi-minus"></span></button>
+      <input type="number"
+             class="form-control"
+             (input)="store.calculateTotals()"
+             [(ngModel)]="artefact.quantity">
+      <button class="input-group-append btn btn-success"
+              (click)="store.addArtefact(artefact)"><span class="mdi mdi-plus"></span></button>
+    </div>
+  </div>
+</div>
