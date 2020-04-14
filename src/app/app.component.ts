@@ -5,6 +5,7 @@ import { factions } from './factions';
 import { collections } from './collections';
 import { HttpClient } from '@angular/common/http';
 import { xptables } from './xptables';
+import { getPlayerArchaeology } from './highscores';
 
 interface IComponent {
   type: any;
@@ -31,6 +32,8 @@ export class AppComponent implements OnInit {
   public materialBankCollapsed: boolean = true;
   public byLevel: boolean = true;
   public componentTypes: typeof componentTypes = componentTypes;
+  public playerName: string;
+  public fetchingPlayer: boolean = false;
   public currentXp: number;
   public currentLevel: number;
   public outfitPieces: number;
@@ -60,6 +63,14 @@ export class AppComponent implements OnInit {
 
   public constructor(private _httpClient: HttpClient) {}
 
+  async updatePlayerXP(): Promise<void> {
+    this.fetchingPlayer = true;
+    const { experience } = await getPlayerArchaeology(this.playerName);
+
+    this.currentXp = experience;
+    this.currentXpChanged();
+    this.fetchingPlayer = false;
+  }
   public toggleDarkMode(p_darkMode: boolean): void {
     this.darkMode = p_darkMode;
   }
