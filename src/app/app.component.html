@@ -187,7 +187,8 @@
                     <input type="number"
                            class="form-control mr-2"
                            style="max-width: 80px; display: inline"
-                           [(ngModel)]="material.value.owned">
+                           (input)="saveInputData(material.value.id, material.value.owned)"
+                            [(ngModel)]="material.value.owned">
                     <div class="d-inline-block"
                          style="width: 30px;">
                       <img [src]="material.value.image"
@@ -340,7 +341,8 @@
                 <input type="number"
                        class="form-control mr-2"
                        style="max-width: 80px; display: inline"
-                       [(ngModel)]="componentTypes[material.type.id].owned">
+                       [(ngModel)]="componentTypes[material.type.id].owned"
+                       (input)="saveInputData(material.value.id, material.value.owned)">
                 <div class="d-inline-block"
                      style="width: 30px;">
                   <img [src]="material.type.image"

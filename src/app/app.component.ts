@@ -26,7 +26,7 @@ interface IArtefact {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit{
   public xpCalcCollapsed: boolean = true;
   public materialBankCollapsed: boolean = true;
   public byLevel: boolean = true;
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
     level: number;
     quantity: number;
   }[] = [];
-  public darkMode: boolean = false;
+  public darkMode: boolean = Boolean(localStorage.getItem('darkmode'));
   public byFaction: boolean = true;
   public hasOwnedMaterials: boolean = false;
   public search: string;
@@ -62,6 +62,7 @@ export class AppComponent implements OnInit {
 
   public toggleDarkMode(p_darkMode: boolean): void {
     this.darkMode = p_darkMode;
+    localStorage.setItem('darkmode', p_darkMode.toString());
   }
   public addArtefact(p_artefact: IArtefact): void {
     p_artefact.quantity++;
@@ -216,6 +217,11 @@ export class AppComponent implements OnInit {
         const w_type = this.componentTypes[w_key];
         w_type.owned = null;
         w_type.done = false;
+        //Reset localstorage
+        this.resetInputData(w_key);
+        const w_componentType = componentTypes[w_key];
+        //Load storage to have input filled with zeros
+        w_componentType.owned = this.loadInputData(w_key);
       }
     }
     if (p_event) {
@@ -264,6 +270,25 @@ export class AppComponent implements OnInit {
     p_componentType.done = !p_componentType.done;
   }
 
+  //To make data persistent, to prevent loss of data when the page is refreshed.
+
+
+  public saveInputData(dataKey: any, dataValue: any):void{
+    localStorage.setItem(dataKey, dataValue);
+  }
+
+  public loadInputData(dataKey:any){
+    if(dataKey != null){
+      return localStorage.getItem(dataKey);
+    }else{
+      return null;
+    }
+  }
+
+  public resetInputData(dataKey:any){
+    localStorage.setItem(dataKey, 'null');
+  }
+  ///////////////////////////////////////////////////////////////////////////////////
   public filterResults(): void {
     this.buildData();
   }
@@ -324,6 +349,7 @@ export class AppComponent implements OnInit {
           }
         }
       }
+
       this.data.sort((p_item1: any, p_item2: any): number => {
         return p_item1.levelReq - p_item2.levelReq;
       });
@@ -332,5 +358,17 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
     this.buildData();
+    for (const w_key in componentTypes) {
+      if (componentTypes.hasOwnProperty(w_key)) {
+        const w_componentType = componentTypes[w_key];
+        w_componentType.owned = this.loadInputData(w_key);
+      }
+
   }
+  }
+  
 }
+
+
+
+
