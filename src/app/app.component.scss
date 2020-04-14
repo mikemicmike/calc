@@ -8,6 +8,36 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
+@mixin card-floating-body() {
+  background: inherit;
+  position: absolute;
+  top: 100%;
+  z-index: 1;
+  max-height: 50vh;
+  overflow: auto;
+  box-shadow: 0 0 1px 1px #000000;
+}
+
+.xp-calculator, .material-bank /*, .data-entry */ {
+  .card-body {
+    @include card-floating-body();
+  }
+}
+
+.sun {
+  background-image: url('https://runescape.wiki/images/thumb/4/49/Light_mode_icon.png/70px-Light_mode_icon.png?a56d2');
+  width: 14px;
+  height: 14px;
+  background-size: 100% 100%;
+}
+
+.moon {
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg height='21' viewBox='0 0 21 21' width='21' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m8.85464918.37900488c-1.91149353 1.51069427-3.13816124 3.84973402-3.13816124 6.47527736 0 4.55564936 3.69308349 8.24873286 8.24873286 8.24873286 2.5815709 0 4.8861545-1.1859235 6.3986798-3.0426994-.8206378 4.7389755-4.9523867 8.343122-9.9259291 8.343122-5.56375572 0-10.07407088-4.5103151-10.07407088-10.0740709 0-5.02506013 3.67919933-9.19079725 8.49074856-9.95036192z' fill='%23cbd9f4' fill-rule='evenodd'/%3E%3C/svg%3E");
+  width: 14px;
+  height: 14px;
+  background-size: 100% 100%;
+}
+
 #sticky-footer {
   flex-shrink: none;
 }
@@ -19,9 +49,16 @@ input[type='number']::-webkit-outer-spin-button {
 .text-warning {
   color: #ec7513 !important;
 }
-.strike-through {
-  text-decoration: line-through;
+
+.dark .done {
+  background-color: #2e5e05;
+  color: #ecf8e3;
 }
+
+.done {
+  background-color: #c3e8a3;
+}
+
 .selected-artefact {
   background-color: #ddd;
 }
@@ -53,7 +90,17 @@ input[type='number']::-webkit-outer-spin-button {
 .material-card {
   border: 1px solid #ccc;
   border-radius: 4px;
+  cursor: default;
+
+  .dark &.material-needed:hover {
+    background-color: #3c780a;
+  }
+  
+  &.material-needed:hover {
+    background-color: #ecf8e3;
+  }
 }
+
 @include media-breakpoint-up(xl) {
   .material-card-holder:nth-child(odd) {
     padding-right: 0px;
