@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChosenArtefactComponent } from './chosen-artefact.component';
+import { OwnedMaterialsComponent } from './owned-materials.component';
 
-describe('ChosenArtefactComponent', () => {
-  let component: ChosenArtefactComponent;
-  let fixture: ComponentFixture<ChosenArtefactComponent>;
+describe('OwnedMaterialsComponent', () => {
+  let component: OwnedMaterialsComponent;
+  let fixture: ComponentFixture<OwnedMaterialsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChosenArtefactComponent ]
+      declarations: [ OwnedMaterialsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChosenArtefactComponent);
+    fixture = TestBed.createComponent(OwnedMaterialsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

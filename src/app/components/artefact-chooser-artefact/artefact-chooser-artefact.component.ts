@@ -3,11 +3,11 @@ import { IArtefact } from 'src/app/models/IArtefact';
 import { StoreService } from 'src/app/core/store.service';
 
 @Component({
-  selector: 'app-chosen-artefact',
-  templateUrl: './chosen-artefact.component.html',
-  styleUrls: ['./chosen-artefact.component.scss'],
+  selector: 'app-artefact-chooser-artefact',
+  templateUrl: './artefact-chooser-artefact.component.html',
+  styleUrls: ['./artefact-chooser-artefact.component.scss'],
 })
-export class ChosenArtefactComponent implements OnInit {
+export class ArtefactChooserArtefactComponent implements OnInit {
   @Input()
   public artefact: IArtefact;
   @Input()

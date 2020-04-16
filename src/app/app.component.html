@@ -18,22 +18,7 @@
       </h1>
       <div class="row">
         <div class="col-lg-6">
-          <p>
-            Here is just a tool I quickly put together to calculate the materials needed for given artefacts.
-            <br>
-            Simply select what artefacts you plan on making and at the list of the materials you need will appear.
-
-            <br>
-
-            All artefacts have been added!
-
-            <br>
-            Special thanks to KhaleesiZara & Anilokip4 for helping me with this!
-            <br>
-            If you notice any issues please let me know in game or tag me in Archaeology discord!
-            <br>
-            Mikemicmike
-          </p>
+          <app-intro-text></app-intro-text>
         </div>
         <div class="col-lg-6">
           <app-xp-calculator></app-xp-calculator>
@@ -43,168 +28,14 @@
 
       <div class="row">
         <div class="col-md-6">
-          <h2>Choose your Artefacts
-            <button *ngIf="byFaction"
-                    (click)="changeByFaction(false)"
-                    class="btn btn-info">Show By Collection</button>
-            <button *ngIf="!byFaction"
-                    (click)="changeByFaction(true)"
-                    class="btn btn-info">Show By Faction</button>
-            <button class="btn btn-danger ml-1"
-                    (click)="store.resetAll()">Reset All</button>
-            <button (click)="store.resetArtefacts()"
-                    class="btn btn-danger ml-1">Remove all Artefacts</button>
-            <input type="text"
-                   class="form-control mt-1"
-                   (input)="filterResults()"
-                   placeholder="Search"
-                   [(ngModel)]="search">
-          </h2>
-          <div class="card data-entry"
-               *ngFor="let entry of data">
-            <div class="card-header"
-                 style="cursor: pointer;"
-                 [ngStyle]="{'background-color': entry.color}"
-                 [ngClass]="{'dark-text': byFaction}"
-                 (click)="entry.collapsed = !entry.collapsed">
-              <h4>
-                <div style="width: 70px"
-                     class="d-inline-block text-center">
-                  <img *ngIf="entry.icon"
-                       [src]="entry.icon"
-                       [alt]="entry.label"
-                       style="max-width: 36px; max-height: 36px;"
-                       class="mr-2">
-                </div>
-                <div class="d-inline">
-                  {{entry.label}} - Level {{entry.levelReq}}
-                  <div class="float-right">
-                    <span *ngIf="entry.collapsed"
-                          class="mdi mdi-chevron-up"></span>
-                    <span *ngIf="!entry.collapsed"
-                          class="mdi mdi-chevron-down"></span>
-                  </div>
-                </div>
-              </h4>
-            </div>
-            <div class="card-body"
-                 *ngIf="!entry.collapsed">
-              <div class="row">
-                <app-chosen-artefact class="col-xl-4 col-sm-6 col-12"
-                                     *ngFor="let artefact of entry.artefacts"
-                                     [dark]="darkMode"
-                                     [artefact]="artefact"></app-chosen-artefact>
-              </div>
-
-            </div>
-
-          </div>
+          <app-artefact-chooser [darkMode]="darkMode"></app-artefact-chooser>
         </div>
         <div class="col-md-6">
-          <div class="row">
-            <div class="col">
-              <h2>Results</h2>
-              <h4>Chosen Artefacts</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <ul class="list-group">
-                <li *ngFor="let artefact of chosenArtefacts"
-                    class="list-group-item">
-                  <img [src]="artefact.image"
-                       [alt]="artefact.label"
-                       class="mr-2">
-                  {{artefact.quantity}} {{artefact.label | titlecase}} ({{artefact.xp}}xp each)
-                </li>
-              </ul>
-              <h6 *ngIf="totalXp">Total XP: {{totalXp | number:'1.0-0'}}</h6>
-              <h6 *ngIf="totalXp">Total XP with Outfit: {{totalXp * 1.06 | number:'1.0-0'}}</h6>
-            </div>
-          </div>
-          <div class="row mt-2">
-            <div class="col">
-              <h4>Required Materials</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-6 material-card-holder"
-                 *ngFor="let material of neededMaterials">
-              <div class="p-2 material-card">
-                <div class="d-inline-block"
-                     style="width: 30px;">
-                  <img [src]="material.type.image"
-                       [alt]="material.type.label"
-                       class="mr-2">
-                </div>
-                {{material.quantity}} {{material.type.label}}
-              </div>
-            </div>
-          </div>
-          <div class="row mt-2">
-            <div class="col">
-              <h4>
-                Owned Materials
-                <button (click)="store.removeOwnedMaterials()"
-                        class="btn btn-danger">Remove Owned</button>
-              </h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-6 material-card-holder"
-                 *ngFor="let material of neededMaterials">
-              <div class="p-2 material-card">
-                <input type="number"
-                       class="form-control mr-2"
-                       style="max-width: 80px; display: inline"
-                       [(ngModel)]="componentTypes[material.type.id].owned">
-                <div class="d-inline-block"
-                     style="width: 30px;">
-                  <img [src]="material.type.image"
-                       [alt]="material.type.label"
-                       class="mr-2">
-                </div>
-                {{material.type.label}}
-              </div>
-            </div>
-          </div>
-          <div class="row mt-2">
-            <div class="col">
-              <h4>Needed Materials</h4>
-            </div>
-          </div>
-          <div class="row">
-            <ng-template ngFor
-                         let-material
-                         [ngForOf]="neededMaterials">
-              <div class="col-xl-6 material-card-holder"
-                   *ngIf="!componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity">
-                <div class="p-2 material-card material-needed"
-                     [ngClass]="{'done': componentTypes[material.type.id].done}"
-                     (click)="toggleComplete(componentTypes[material.type.id])">
-                  <div class="row">
-                    <div class="col-12 pt-1">
-                      <span>
-                        <div class="d-inline-block"
-                             style="width: 30px;">
-                          <img [src]="material.type.image"
-                               [alt]="material.type.label"
-                               class="mr-2">
-                        </div>
-                        <span *ngIf="componentTypes[material.type.id].owned">
-                          {{material.quantity - componentTypes[material.type.id].owned }}
-                        </span>
-                        <span *ngIf="!componentTypes[material.type.id].owned">
-                          {{material.quantity}}
-                        </span>
-                        {{material.type.label}}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </div>
+          <h2>Results</h2>
+          <app-chosen-artefacts></app-chosen-artefacts>
+          <app-required-materials></app-required-materials>
+          <app-owned-materials></app-owned-materials>
+          <app-needed-materials></app-needed-materials>
         </div>
       </div>
     </div>

@@ -1,1 +1,20 @@
-<p>chosen-artefacts works!</p>
+<div class="row">
+  <div class="col">
+    <h4>Chosen Artefacts</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <ul class="list-group">
+      <li *ngFor="let artefact of chosenArtefacts"
+          class="list-group-item">
+        <img [src]="artefact.image"
+             [alt]="artefact.label"
+             class="mr-2">
+        {{artefact.quantity}} {{artefact.label | titlecase}} ({{artefact.xp}}xp each)
+      </li>
+    </ul>
+    <h6 *ngIf="totalXp">Total XP: {{totalXp | number:'1.0-0'}}</h6>
+    <h6 *ngIf="totalXp">Total XP with Outfit: {{totalXp * 1.06 | number:'1.0-0'}}</h6>
+  </div>
+</div>

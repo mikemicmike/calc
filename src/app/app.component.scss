@@ -29,33 +29,6 @@
   color: #ecf8e3;
 }
 
-.done {
-  background-color: #c3e8a3;
-}
-
-.material-card {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: default;
-
-  .dark &.material-needed:hover {
-    background-color: #3c780a;
-  }
-
-  &.material-needed:hover {
-    background-color: #ecf8e3;
-  }
-}
-
-@include media-breakpoint-up(xl) {
-  .material-card-holder:nth-child(odd) {
-    padding-right: 0px;
-  }
-  .material-card-holder:nth-child(even) {
-    padding-left: 0px;
-  }
-}
-
 // .checkmark-container {
 //   cursor: pointer;
 //   -webkit-user-select: none;

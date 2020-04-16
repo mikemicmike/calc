@@ -1,0 +1,37 @@
+<div class="row mt-2">
+  <div class="col">
+    <h4>Needed Materials</h4>
+  </div>
+</div>
+<div class="row">
+  <ng-template ngFor
+               let-material
+               [ngForOf]="neededMaterials">
+    <div class="col-xl-6 material-card-holder"
+         *ngIf="!componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity">
+      <div class="p-2 material-card material-needed"
+           [ngClass]="{'done': componentTypes[material.type.id].done}"
+           (click)="toggleComplete(componentTypes[material.type.id])">
+        <div class="row">
+          <div class="col-12 pt-1">
+            <span>
+              <div class="d-inline-block"
+                   style="width: 30px;">
+                <img [src]="material.type.image"
+                     [alt]="material.type.label"
+                     class="mr-2">
+              </div>
+              <span *ngIf="componentTypes[material.type.id].owned">
+                {{material.quantity - componentTypes[material.type.id].owned }}
+              </span>
+              <span *ngIf="!componentTypes[material.type.id].owned">
+                {{material.quantity}}
+              </span>
+              {{material.type.label}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

@@ -3,14 +3,21 @@ import { IArtefact } from '../models/IArtefact';
 import { artefacts } from '../data/artefacts';
 import { IComponent } from '../models/IComponent';
 import { componentTypes } from '../data/componentTypes';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StoreService {
-  public chosenArtefacts: IArtefact[] = [];
-  public neededMaterials: IComponent[] = [];
-  public totalXp: number = 0;
+  private _chosenArtefacts: IArtefact[] = [];
+  private _neededMaterials: IComponent[] = [];
+  private _chosenArtefacts$: BehaviorSubject<IArtefact[]> = new BehaviorSubject(
+    this._chosenArtefacts
+  );
+  private _neededMaterials$: BehaviorSubject<
+    IComponent[]
+  > = new BehaviorSubject(this._neededMaterials);
 
   constructor() {}
 
@@ -20,12 +27,11 @@ export class StoreService {
   }
 
   public calculateTotals(): void {
-    this.chosenArtefacts = artefacts.filter((p_artefact: IArtefact) => {
+    this._chosenArtefacts = artefacts.filter((p_artefact: IArtefact) => {
       return p_artefact.quantity > 0;
     });
     const w_neededMaterials = {};
-    this.totalXp = 0;
-    this.chosenArtefacts.forEach((p_artefact: IArtefact) => {
+    this._chosenArtefacts.forEach((p_artefact: IArtefact) => {
       p_artefact.components.forEach((p_component) => {
         if (!w_neededMaterials[p_component.type.id]) {
           w_neededMaterials[p_component.type.id] = { ...p_component };
@@ -37,15 +43,23 @@ export class StoreService {
         w_neededMaterials[p_component.type.id].quantity +=
           p_component.quantity * p_artefact.quantity;
       });
-      this.totalXp += p_artefact.xp * p_artefact.quantity;
     });
-    this.neededMaterials = [];
+    this._neededMaterials = [];
     for (const w_key in w_neededMaterials) {
       if (w_neededMaterials.hasOwnProperty(w_key)) {
         const w_neededMat = w_neededMaterials[w_key];
-        this.neededMaterials.push(w_neededMat);
+        this._neededMaterials.push(w_neededMat);
       }
     }
+    this._chosenArtefacts$.next(this._chosenArtefacts);
+    this._neededMaterials$.next(this._neededMaterials);
+  }
+
+  public getChosenArtefacts$(): Observable<IArtefact[]> {
+    return this._chosenArtefacts$.pipe(debounceTime(100));
+  }
+  public getNeededMaterials$(): Observable<IComponent[]> {
+    return this._neededMaterials$.pipe(debounceTime(100));
   }
 
   public removeOwnedMaterials(p_event?: MouseEvent): void {
