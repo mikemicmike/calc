@@ -3,6 +3,7 @@ import { IArtefact } from 'src/app/models/IArtefact';
 import { artefacts } from 'src/app/data/artefacts';
 import { factions } from 'src/app/data/factions';
 import { xptables } from 'src/app/data/xptables';
+import { HighscoresService } from 'src/app/core/highscores.service';
 
 @Component({
   selector: 'app-xp-calculator',
@@ -24,7 +25,7 @@ export class XpCalculatorComponent implements OnInit {
   public targetXp: number;
   public xpCalcCollapsed: boolean = true;
   public xpModifier: number = 1;
-  constructor() {}
+  constructor(public highscores: HighscoresService) {}
 
   public addArtefactsToNeededArtefacts(p_neededArtefact: {
     quantity: number;
@@ -153,9 +154,11 @@ export class XpCalculatorComponent implements OnInit {
     this.xpCalcCollapsed = !this.xpCalcCollapsed;
   }
 
-  async updatePlayerXP(): Promise<void> {
+  public async updatePlayerXP(): Promise<void> {
     this.fetchingPlayer = true;
-    const { experience } = await getPlayerArchaeology(this.playerName);
+    const { experience } = await this.highscores.getPlayerArchaeology(
+      this.playerName
+    );
 
     this.currentXp = experience;
     this.currentXpChanged();
