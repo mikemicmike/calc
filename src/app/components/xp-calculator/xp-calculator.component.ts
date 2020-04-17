@@ -13,11 +13,13 @@ export class XpCalculatorComponent implements OnInit {
   public byLevel: boolean = true;
   public currentXp: number;
   public currentLevel: number;
+  public fetchingPlayer: boolean = false;
   public neededArtefacts: {
     level: number;
     quantity: number;
   }[] = [];
   public outfitPieces: number;
+  public playerName: string;
   public targetLevel: number;
   public targetXp: number;
   public xpCalcCollapsed: boolean = true;
@@ -149,6 +151,15 @@ export class XpCalculatorComponent implements OnInit {
 
   public toggleXpCalcCollapse(): void {
     this.xpCalcCollapsed = !this.xpCalcCollapsed;
+  }
+
+  async updatePlayerXP(): Promise<void> {
+    this.fetchingPlayer = true;
+    const { experience } = await getPlayerArchaeology(this.playerName);
+
+    this.currentXp = experience;
+    this.currentXpChanged();
+    this.fetchingPlayer = false;
   }
 
   public ngOnInit(): void {}
