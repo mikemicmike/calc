@@ -1,0 +1,14 @@
+.material-card {
+  .dark &.material-needed:hover {
+    background-color: #3c780a;
+  }
+
+  &.material-needed:hover {
+    background-color: #ecf8e3;
+  }
+}
+
+.done {
+  background-color: #c3e8a3;
+  text-decoration: line-through;
+}

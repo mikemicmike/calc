@@ -1,0 +1,47 @@
+<div class="card mt-2 material-bank">
+  <div class="card-header"
+       style="cursor: pointer;"
+       (click)="toggleMaterialBank()">
+    <strong>
+      Material Bank
+    </strong>
+    <div class="float-right">
+      <button *ngIf="!materialBankCollapsed"
+              class="btn btn-danger btn-sm"
+              (click)="removeOwnedMaterials($event)">Clear Owned</button>
+      <span *ngIf="materialBankCollapsed"
+            class="ml-2 mdi mdi-chevron-up"></span>
+      <span *ngIf="!materialBankCollapsed"
+            class="ml-2 mdi mdi-chevron-down"></span>
+    </div>
+  </div>
+  <div class="card-body"
+       *ngIf="!materialBankCollapsed">
+    <div class="row">
+      <div class="col">
+        <p>
+          This area is simply here in case you wish to add all of your materials instead of just the ones needed for certain artefacts. This will automatically be
+          linked to your owned materials.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-6 material-card-holder"
+           *ngFor="let material of componentTypes | keyvalue">
+        <div class="p-2 material-card">
+          <input type="number"
+                 class="form-control mr-2"
+                 style="max-width: 80px; display: inline"
+                 [(ngModel)]="material.value.owned">
+          <div class="d-inline-block"
+               style="width: 30px;">
+            <img [src]="material.value.image"
+                 [alt]="material.value.label"
+                 class="mr-2">
+          </div>
+          {{material.value.label}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

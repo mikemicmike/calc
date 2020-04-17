@@ -1,0 +1,23 @@
+<h2>Choose your Artefacts
+  <button *ngIf="byFaction"
+          (click)="changeByFaction(false)"
+          class="btn btn-info">Show By Collection</button>
+  <button *ngIf="!byFaction"
+          (click)="changeByFaction(true)"
+          class="btn btn-info">Show By Faction</button>
+  <button class="btn btn-danger ml-1"
+          (click)="store.resetAll()">Reset All</button>
+  <button (click)="store.resetArtefacts()"
+          class="btn btn-danger ml-1">Remove all Artefacts</button>
+  <input type="text"
+         class="form-control mt-1"
+         (input)="filterResults()"
+         placeholder="Search"
+         [(ngModel)]="search">
+</h2>
+<app-artefact-chooser-section *ngFor="let section of data"
+                              [section]="section"
+                              [byFaction]="byFaction"
+                              [darkMode]="darkMode">
+
+</app-artefact-chooser-section>

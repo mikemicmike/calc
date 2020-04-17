@@ -2,28 +2,6 @@
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-@mixin card-floating-body() {
-  background: inherit;
-  position: absolute;
-  top: 100%;
-  z-index: 1;
-  max-height: 50vh;
-  overflow: auto;
-  box-shadow: 0 0 1px 1px #000000;
-}
-
-.xp-calculator, .material-bank /*, .data-entry */ {
-  .card-body {
-    @include card-floating-body();
-  }
-}
-
 .sun {
   background-image: url('https://runescape.wiki/images/thumb/4/49/Light_mode_icon.png/70px-Light_mode_icon.png?a56d2');
   width: 14px;
@@ -46,68 +24,9 @@ input[type='number']::-webkit-outer-spin-button {
   flex: 1 0 auto;
 }
 
-.text-warning {
-  color: #ec7513 !important;
-}
-
 .dark .done {
   background-color: #2e5e05;
   color: #ecf8e3;
-}
-
-.done {
-  background-color: #c3e8a3;
-}
-
-.selected-artefact {
-  background-color: #ddd;
-}
-
-.dark {
-  color: white !important;
-  background-color: #272727 !important;
-  .card {
-    background-color: #1f1f1f !important;
-    color: white !important;
-  }
-  .table {
-    color: white;
-  }
-
-  .list-group-item {
-    background-color: #1f1f1f !important;
-    color: white !important;
-  }
-
-  .dark-text {
-    color: black;
-  }
-  .selected-artefact {
-    background-color: #888;
-  }
-}
-
-.material-card {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: default;
-
-  .dark &.material-needed:hover {
-    background-color: #3c780a;
-  }
-  
-  &.material-needed:hover {
-    background-color: #ecf8e3;
-  }
-}
-
-@include media-breakpoint-up(xl) {
-  .material-card-holder:nth-child(odd) {
-    padding-right: 0px;
-  }
-  .material-card-holder:nth-child(even) {
-    padding-left: 0px;
-  }
 }
 
 // .checkmark-container {

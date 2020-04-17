@@ -1,0 +1,38 @@
+<div class="card data-section">
+  <div class="card-header"
+       style="cursor: pointer;"
+       [ngStyle]="{'background-color': section.color}"
+       [ngClass]="{'dark-text': byFaction}"
+       (click)="section.collapsed = !section.collapsed">
+    <h4>
+      <div style="width: 70px"
+           class="d-inline-block text-center">
+        <img *ngIf="section.icon"
+             [src]="section.icon"
+             [alt]="section.label"
+             style="max-width: 36px; max-height: 36px;"
+             class="mr-2">
+      </div>
+      <div class="d-inline">
+        {{section.label}} - Level {{section.levelReq}}
+        <div class="float-right">
+          <span *ngIf="section.collapsed"
+                class="mdi mdi-chevron-up"></span>
+          <span *ngIf="!section.collapsed"
+                class="mdi mdi-chevron-down"></span>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-body"
+       *ngIf="!section.collapsed">
+    <div class="row">
+      <app-artefact-chooser-artefact class="col-xl-4 col-sm-6 col-12"
+                                     *ngFor="let artefact of section.artefacts"
+                                     [dark]="darkMode"
+                                     [artefact]="artefact"></app-artefact-chooser-artefact>
+    </div>
+
+  </div>
+
+</div>

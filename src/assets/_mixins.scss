@@ -1,0 +1,9 @@
+@mixin card-floating-body() {
+  background: inherit;
+  position: absolute;
+  top: 100%;
+  z-index: 1;
+  max-height: 50vh;
+  overflow: auto;
+  box-shadow: 0 0 1px 1px #000000;
+}

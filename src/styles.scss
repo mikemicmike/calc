@@ -1,8 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
 $mdi-font-path: '~@mdi/font/fonts/'; // NOTE: Had to seach the interwebs to figure this one out! -Félix
 @import '~@mdi/font/scss/materialdesignicons';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
 
 html,
 body {
   height: 100%;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.dark {
+  color: white !important;
+  background-color: #272727 !important;
+  .card {
+    background-color: #1f1f1f !important;
+    color: white !important;
+  }
+  .table {
+    color: white;
+  }
+
+  .list-group-item {
+    background-color: #1f1f1f !important;
+    color: white !important;
+  }
+
+  .dark-text {
+    color: black;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .material-card-holder:nth-child(odd) {
+    padding-right: 0px;
+  }
+  .material-card-holder:nth-child(even) {
+    padding-left: 0px;
+  }
+}
+
+.material-card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: default;
 }
