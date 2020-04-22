@@ -15,6 +15,7 @@ export class XpCalculatorComponent implements OnInit {
   public currentXp: number;
   public currentLevel: number;
   public fetchingPlayer: boolean = false;
+  public playerNotFoundError: boolean = false;
   public neededArtefacts: {
     level: number;
     quantity: number;
@@ -156,12 +157,20 @@ export class XpCalculatorComponent implements OnInit {
 
   public async updatePlayerXP(): Promise<void> {
     this.fetchingPlayer = true;
-    const { experience } = await this.highscores.getPlayerArchaeology(
+    const data = await this.highscores.getPlayerArchaeology(
       this.playerName
     );
 
-    this.currentXp = experience;
-    this.currentXpChanged();
+    if (data) {
+      const { experience } = data;
+
+      this.currentXp = experience;
+      this.playerNotFoundError = false;
+      this.currentXpChanged();
+    } else {
+      this.playerNotFoundError = true;
+    }
+
     this.fetchingPlayer = false;
   }
 

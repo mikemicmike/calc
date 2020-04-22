@@ -240,18 +240,28 @@ export class HighscoresService {
     };
   }
   public async getPlayer(user: string): Promise<Player> {
-    const data = await fetch(
-      `${PROXY}secure.runescape.com/m=hiscore/index_lite.ws?player=${user}`
-    );
-
-    return this._parseToJSON(await data.text());
+    try {
+      const data = await fetch(
+        `${PROXY}secure.runescape.com/m=hiscore/index_lite.ws?player=${user}`
+      );
+  
+      return this._parseToJSON(await data.text());
+    } catch (err) {
+      return null;
+    }
   }
 
   public async getPlayerArchaeology(user: string): Promise<SkillRank> {
-    const {
-      skills: { archaeology },
-    } = await this.getPlayer(user);
+    const data = await this.getPlayer(user);
 
-    return archaeology;
+    if (data) {
+      const {
+        skills: { archaeology },
+      } = data; 
+
+      return archaeology;
+    }
+
+    return null;
   }
 }
