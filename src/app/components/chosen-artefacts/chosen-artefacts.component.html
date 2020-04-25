@@ -6,53 +6,61 @@
 <div class="row">
   <div class="col">
     <ul class="list-group">
-      <li *ngFor="let artefact of chosenArtefacts" class="list-group-item">
-        <img [src]="artefact.image" [alt]="artefact.label" class="mr-2" />
+      <li *ngFor="let artefact of chosenArtefacts"
+          class="list-group-item">
+        <img [src]="artefact.image"
+             [alt]="artefact.label"
+             class="mr-2" />
         {{ artefact.quantity }} {{ artefact.label | titlecase }} ({{
           artefact.xp
         }}xp each)
       </li>
     </ul>
     <div *ngIf="totalXp">
-      <h5>XP:</h5>
-      <div class="row">
-        <div class="col">
-          Use 2% relic
-        </div>
-        <div class="col checkboxWrapper">
-          <span class="squaredOne">
-            <input
-              (change)="toggleisrelic()"
-              type="checkbox"
-              value="None"
-              id="squaredOne"
-              name="check"
-              [ngModel]="isRelic"
-            />
-            <label for="squaredOne"></label>
-          </span>
+      <div class="row form-group mt-2">
+        <label for="outfitPieces"
+               class="col-sm-2 col-form-lavel">2% Relic</label>
+        <div class="col-sm-10">
+          <div class="custom-control custom-switch">
+            <input type="checkbox"
+                   [(ngModel)]="isRelic"
+                   (ngModelChange)="recalculateXp()"
+                   class="custom-control-input"
+                   id="outfitPieces">
+            <label class="custom-control-label"
+                   for="outfitPieces"></label>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col selectWrapperLabel">
-          <label for="outfit">Outfit</label>
-        </div>
-        <div class="col selectWrapper">
-          <select
-            class="select-css"
-            [ngModel]="isOutfit"
-            (ngModelChange)="onchangedowndown($event)"
-          >
-            <option value="none">
-              None
+      <div class="row form-group">
+        <label for="outfitPieces"
+               class="col-sm-2 col-form-lavel">Outfit Pieces</label>
+        <div class="col-sm-10">
+          <select class="form-control"
+                  [(ngModel)]="outfitPieces"
+                  (ngModelChange)="recalculateXp()">
+            <option value="0">
+              0
             </option>
-            <option value="outfit">
-              outfit
+            <option value="1">
+              1
+            </option>
+            <option value="2">
+              2
+            </option>
+            <option value="3">
+              3
+            </option>
+            <option value="4">
+              4
+            </option>
+            <option value="5">
+              5
             </option>
           </select>
         </div>
       </div>
-      <h6><u>Total XP:</u> {{ getTotalXP() | number: '1.0-0' }}</h6>
+      <h6><u>Total XP:</u> {{ calculatedXp | number: '1.0-0' }}</h6>
     </div>
   </div>
 </div>

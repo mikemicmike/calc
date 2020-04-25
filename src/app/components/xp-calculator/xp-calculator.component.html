@@ -41,7 +41,8 @@
                [(ngModel)]="playerName"
                id="playerName"
                placeholder="Player name" />
-        <div *ngIf="playerNotFoundError" class="playerNotFound">Player not found</div>
+        <div *ngIf="playerNotFoundError"
+             class="playerNotFound">Player not found</div>
       </div>
       <div class="col-sm-4"
            *ngIf="playerName">

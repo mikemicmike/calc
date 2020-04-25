@@ -8,9 +8,10 @@ import { IArtefact } from 'src/app/models/IArtefact';
   styleUrls: ['./chosen-artefacts.component.scss'],
 })
 export class ChosenArtefactsComponent implements OnInit {
+  public calculatedXp: number;
   public chosenArtefacts: IArtefact[];
   public totalXp: number = 0;
-  public isOutfit: string = 'none';
+  public outfitPieces: string = '0';
   public isRelic: boolean = false;
   constructor(public store: StoreService) {}
 
@@ -20,30 +21,45 @@ export class ChosenArtefactsComponent implements OnInit {
       p_artefacts.forEach((p_artefact) => {
         this.totalXp += p_artefact.quantity * p_artefact.xp;
       });
-      this.getTotalXP();
+      this.recalculateXp();
       this.chosenArtefacts = p_artefacts;
     });
   }
 
-  public toggleisrelic() {
-    this.isRelic = !this.isRelic;
-  }
-
-  public onchangedowndown(value) {
-    this.isOutfit = value;
+  public recalculateXp(): void {
+    this.calculatedXp = this.getTotalXP();
   }
 
   public getTotalXP(): number {
-    if (this.isOutfit === 'outfit' && this.isRelic) {
-      return 1.08 * this.totalXp;
+    let w_bonusXp: number = 0;
+    if (this.isRelic) {
+      w_bonusXp += this.totalXp * 0.02;
     }
-    if (this.isOutfit === 'outfit' && !this.isRelic) {
-      return 1.06 * this.totalXp;
-    }
-    if (this.isOutfit === 'none' && this.isRelic) {
-      return 1.02 * this.totalXp;
+    console.log(
+      'ChosenArtefactsComponent -> getTotalXP -> this.outfitPieces',
+      this.outfitPieces
+    );
+    switch (this.outfitPieces) {
+      case '1':
+        w_bonusXp += this.totalXp * 0.01;
+        break;
+      case '2':
+        w_bonusXp += this.totalXp * 0.02;
+        break;
+      case '3':
+        w_bonusXp += this.totalXp * 0.03;
+        break;
+      case '4':
+        w_bonusXp += this.totalXp * 0.04;
+        break;
+      case '5':
+        w_bonusXp += this.totalXp * 0.06;
+        break;
+
+      default:
+        break;
     }
 
-    return this.totalXp;
+    return this.totalXp + w_bonusXp;
   }
 }

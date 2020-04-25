@@ -22,6 +22,7 @@ export class ArtefactChooserComponent implements OnInit {
 
   public changeByFaction(p_byFaction: boolean): void {
     this.byFaction = p_byFaction;
+    this.buildData();
   }
 
   public filterResults(): void {
