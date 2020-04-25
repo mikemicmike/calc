@@ -35,10 +35,6 @@ export class ChosenArtefactsComponent implements OnInit {
     if (this.isRelic) {
       w_bonusXp += this.totalXp * 0.02;
     }
-    console.log(
-      'ChosenArtefactsComponent -> getTotalXP -> this.outfitPieces',
-      this.outfitPieces
-    );
     switch (this.outfitPieces) {
       case '1':
         w_bonusXp += this.totalXp * 0.01;
