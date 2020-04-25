@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges,
+} from '@angular/core';
 import { StoreService } from 'src/app/core/store.service';
 import { IArtefact } from 'src/app/models/IArtefact';
 
@@ -7,23 +14,29 @@ import { IArtefact } from 'src/app/models/IArtefact';
   templateUrl: './chosen-artefacts.component.html',
   styleUrls: ['./chosen-artefacts.component.scss'],
 })
-export class ChosenArtefactsComponent implements OnInit {
+export class ChosenArtefactsComponent implements OnInit, OnChanges {
   public calculatedXp: number;
   public chosenArtefacts: IArtefact[];
   public totalXp: number = 0;
+  @Input()
   public outfitPieces: string = '0';
+  @Output()
+  public outfitPiecesChange: EventEmitter<string> = new EventEmitter<string>();
+  @Input()
   public isRelic: boolean = false;
+  @Output()
+  public isRelicChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor(public store: StoreService) {}
 
-  public ngOnInit(): void {
-    this.store.getChosenArtefacts$().subscribe((p_artefacts) => {
-      this.totalXp = 0;
-      p_artefacts.forEach((p_artefact) => {
-        this.totalXp += p_artefact.quantity * p_artefact.xp;
-      });
-      this.recalculateXp();
-      this.chosenArtefacts = p_artefacts;
-    });
+  public isRelicChanged(): void {
+    this.isRelicChange.emit(this.isRelic);
+    this.recalculateXp();
+  }
+
+  public outfitPiecesChanged(): void {
+    this.outfitPiecesChange.emit(this.outfitPieces);
+    this.recalculateXp();
   }
 
   public recalculateXp(): void {
@@ -57,5 +70,20 @@ export class ChosenArtefactsComponent implements OnInit {
     }
 
     return this.totalXp + w_bonusXp;
+  }
+
+  public ngOnChanges(): void {
+    this.recalculateXp();
+  }
+
+  public ngOnInit(): void {
+    this.store.getChosenArtefacts$().subscribe((p_artefacts) => {
+      this.totalXp = 0;
+      p_artefacts.forEach((p_artefact) => {
+        this.totalXp += p_artefact.quantity * p_artefact.xp;
+      });
+      this.recalculateXp();
+      this.chosenArtefacts = p_artefacts;
+    });
   }
 }

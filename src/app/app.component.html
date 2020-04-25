@@ -21,7 +21,8 @@
           <app-intro-text></app-intro-text>
         </div>
         <div class="col-lg-6">
-          <app-xp-calculator></app-xp-calculator>
+          <app-xp-calculator [(outfitPieces)]="outfitPieces"
+                             [(isRelic)]="isRelic"></app-xp-calculator>
           <app-material-bank></app-material-bank>
         </div>
       </div>
@@ -32,7 +33,8 @@
         </div>
         <div class="col-md-6">
           <h2>Results</h2>
-          <app-chosen-artefacts></app-chosen-artefacts>
+          <app-chosen-artefacts [(outfitPieces)]="outfitPieces"
+                                [(isRelic)]="isRelic"></app-chosen-artefacts>
           <app-required-materials></app-required-materials>
           <app-owned-materials></app-owned-materials>
           <app-needed-materials></app-needed-materials>

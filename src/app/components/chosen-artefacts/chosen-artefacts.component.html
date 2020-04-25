@@ -18,17 +18,17 @@
     </ul>
     <div *ngIf="totalXp">
       <div class="row form-group mt-2">
-        <label for="outfitPieces"
+        <label for="isRelic"
                class="col-sm-2 col-form-lavel">2% Relic</label>
         <div class="col-sm-10">
           <div class="custom-control custom-switch">
             <input type="checkbox"
                    [(ngModel)]="isRelic"
-                   (ngModelChange)="recalculateXp()"
+                   (ngModelChange)="isRelicChanged()"
                    class="custom-control-input"
-                   id="outfitPieces">
+                   id="isRelic">
             <label class="custom-control-label"
-                   for="outfitPieces"></label>
+                   for="isRelic"></label>
           </div>
         </div>
       </div>
@@ -36,9 +36,10 @@
         <label for="outfitPieces"
                class="col-sm-2 col-form-lavel">Outfit Pieces</label>
         <div class="col-sm-10">
-          <select class="form-control"
+          <select id="outfitPieces"
+                  class="form-control"
                   [(ngModel)]="outfitPieces"
-                  (ngModelChange)="recalculateXp()">
+                  (ngModelChange)="outfitPiecesChanged()">
             <option value="0">
               0
             </option>

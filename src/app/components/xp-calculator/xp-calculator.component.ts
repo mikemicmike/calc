@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  EventEmitter,
+  Output,
+  OnChanges,
+} from '@angular/core';
 import { IArtefact } from 'src/app/models/IArtefact';
 import { artefacts } from 'src/app/data/artefacts';
 import { factions } from 'src/app/data/factions';
@@ -10,7 +17,7 @@ import { HighscoresService } from 'src/app/core/highscores.service';
   templateUrl: './xp-calculator.component.html',
   styleUrls: ['./xp-calculator.component.scss'],
 })
-export class XpCalculatorComponent implements OnInit {
+export class XpCalculatorComponent implements OnInit, OnChanges {
   public byLevel: boolean = true;
   public currentXp: number;
   public currentLevel: number;
@@ -20,7 +27,15 @@ export class XpCalculatorComponent implements OnInit {
     level: number;
     quantity: number;
   }[] = [];
-  public outfitPieces: number;
+  @Input()
+  public outfitPieces: string;
+  @Output()
+  public outfitPiecesChange: EventEmitter<string> = new EventEmitter();
+  @Input()
+  public isRelic: boolean;
+  @Output()
+  public isRelicChange: EventEmitter<boolean> = new EventEmitter();
+
   public playerName: string;
   public targetLevel: number;
   public targetXp: number;
@@ -75,21 +90,32 @@ export class XpCalculatorComponent implements OnInit {
     return xptables[this.getLevelForXp(p_xp)] - p_xp;
   }
 
-  public outfitPiecesChanged(): void {
-    if (this.outfitPieces === 1) {
+  public recalculateXp(): void {
+    if (this.outfitPieces === '1') {
       this.xpModifier = 1.01;
-    } else if (this.outfitPieces === 2) {
+    } else if (this.outfitPieces === '2') {
       this.xpModifier = 1.02;
-    } else if (this.outfitPieces === 3) {
+    } else if (this.outfitPieces === '3') {
       this.xpModifier = 1.03;
-    } else if (this.outfitPieces === 4) {
+    } else if (this.outfitPieces === '4') {
       this.xpModifier = 1.04;
-    } else if (this.outfitPieces === 5) {
+    } else if (this.outfitPieces === '5') {
       this.xpModifier = 1.06;
     } else {
       this.xpModifier = 1;
     }
+    if (this.isRelic) {
+      this.xpModifier += 0.02;
+    }
     this.recalculateNeededArtefacts();
+  }
+  public isRelicChanged(): void {
+    this.recalculateXp();
+    this.isRelicChange.emit(this.isRelic);
+  }
+  public outfitPiecesChanged(): void {
+    this.recalculateXp();
+    this.outfitPiecesChange.emit(this.outfitPieces);
   }
 
   public recalculateNeededArtefacts(): void {
@@ -157,9 +183,7 @@ export class XpCalculatorComponent implements OnInit {
 
   public async updatePlayerXP(): Promise<void> {
     this.fetchingPlayer = true;
-    const data = await this.highscores.getPlayerArchaeology(
-      this.playerName
-    );
+    const data = await this.highscores.getPlayerArchaeology(this.playerName);
 
     if (data) {
       const { experience } = data;
@@ -174,5 +198,8 @@ export class XpCalculatorComponent implements OnInit {
     this.fetchingPlayer = false;
   }
 
+  public ngOnChanges(): void {
+    this.recalculateXp();
+  }
   public ngOnInit(): void {}
 }

@@ -18,6 +18,8 @@ import { IArtefactChooserSection } from './models/IArtefactChooserSection';
 export class AppComponent implements OnInit {
   public darkMode: boolean = false;
   public hasOwnedMaterials: boolean = false;
+  public isRelic: boolean = false;
+  public outfitPieces: string = '0';
   public artefacts: IArtefact[] = artefacts;
   public data: IArtefactChooserSection[];
 
