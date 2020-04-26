@@ -191,6 +191,7 @@ export class XpCalculatorComponent implements OnInit, OnChanges {
       this.currentXp = experience;
       this.playerNotFoundError = false;
       this.currentXpChanged();
+      localStorage.setItem('playerName', this.playerName);
     } else {
       this.playerNotFoundError = true;
     }
@@ -201,5 +202,10 @@ export class XpCalculatorComponent implements OnInit, OnChanges {
   public ngOnChanges(): void {
     this.recalculateXp();
   }
-  public ngOnInit(): void {}
+  public ngOnInit(): void {
+    this.playerName = localStorage.getItem('playerName');
+    if (this.playerName) {
+      this.updatePlayerXP();
+    }
+  }
 }

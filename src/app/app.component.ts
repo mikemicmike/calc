@@ -27,7 +27,19 @@ export class AppComponent implements OnInit {
 
   public toggleDarkMode(p_darkMode: boolean): void {
     this.darkMode = p_darkMode;
+    localStorage.setItem('darkMode', this.darkMode.toString());
   }
 
-  public ngOnInit(): void {}
+  public isRelicChanged(): void {
+    localStorage.setItem('isRelic', this.isRelic.toString());
+  }
+
+  public outfitPiecesChanged(): void {
+    localStorage.setItem('outfitPieces', this.outfitPieces);
+  }
+  public ngOnInit(): void {
+    this.darkMode = localStorage.getItem('darkMode') === 'true';
+    this.isRelic = localStorage.getItem('isRelic') === 'true';
+    this.outfitPieces = localStorage.getItem('outfitPieces');
+  }
 }

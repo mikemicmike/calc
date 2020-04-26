@@ -91,6 +91,11 @@ export class ArtefactChooserComponent implements OnInit {
     }
   }
 
+  public resetAll(): void {
+    this.store.resetAll();
+    this.search = '';
+  }
+
   public ngOnInit(): void {
     this.buildData();
   }
