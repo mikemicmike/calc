@@ -68,6 +68,8 @@ export class StoreService {
         const w_type = componentTypes[w_key];
         w_type.owned = null;
         w_type.done = false;
+        localStorage.removeItem('ownedMatQty' + w_type.id);
+        localStorage.removeItem('ownedMatDone' + w_type.id);
       }
     }
     if (p_event) {
@@ -90,5 +92,20 @@ export class StoreService {
       p_artefact.quantity = 0;
     });
     this.calculateTotals();
+  }
+
+  public saveOwnedItems(): void {
+    for (const w_key in componentTypes) {
+      if (componentTypes.hasOwnProperty(w_key)) {
+        const w_type = componentTypes[w_key];
+        if (w_type.owned) {
+          localStorage.setItem('ownedMatQty' + w_type.id, w_type.owned);
+        }
+        localStorage.setItem(
+          'ownedMatDone' + w_type.id,
+          w_type.done.toString()
+        );
+      }
+    }
   }
 }

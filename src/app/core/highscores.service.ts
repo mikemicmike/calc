@@ -244,7 +244,7 @@ export class HighscoresService {
       const data = await fetch(
         `${PROXY}secure.runescape.com/m=hiscore/index_lite.ws?player=${user}`
       );
-  
+
       return this._parseToJSON(await data.text());
     } catch (err) {
       return null;
@@ -257,7 +257,7 @@ export class HighscoresService {
     if (data) {
       const {
         skills: { archaeology },
-      } = data; 
+      } = data;
 
       return archaeology;
     }

@@ -16,6 +16,10 @@ export class NeededMaterialsComponent implements OnInit {
 
   public toggleComplete(p_componentType: any): void {
     p_componentType.done = !p_componentType.done;
+    localStorage.setItem(
+      'ownedMatDone' + p_componentType.id,
+      p_componentType.done.toString()
+    );
   }
 
   public ngOnInit(): void {

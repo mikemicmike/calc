@@ -32,6 +32,7 @@
           <input type="number"
                  class="form-control mr-2"
                  style="max-width: 80px; display: inline"
+                 (input)="changedOwned(material.value)"
                  [(ngModel)]="material.value.owned">
           <div class="d-inline-block"
                style="width: 30px;">

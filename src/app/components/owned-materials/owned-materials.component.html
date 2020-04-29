@@ -14,7 +14,8 @@
       <input type="number"
              class="form-control mr-2"
              style="max-width: 80px; display: inline"
-             [(ngModel)]="componentTypes[material.type.id].owned">
+             [(ngModel)]="componentTypes[material.type.id].owned"
+             (input)="changedOwned(material)">
       <div class="d-inline-block"
            style="width: 30px;">
         <img [src]="material.type.image"

@@ -14,6 +14,14 @@ export class OwnedMaterialsComponent implements OnInit {
 
   constructor(public store: StoreService) {}
 
+  public changedOwned(p_material: any): void {
+    if (p_material.owned) {
+      localStorage.setItem('ownedMatQty' + p_material.id, p_material.owned);
+    } else {
+      localStorage.removeItem('ownedMatQty' + p_material.id);
+    }
+  }
+
   public ngOnInit(): void {
     this.store.getNeededMaterials$().subscribe((p_neededMaterials) => {
       this.neededMaterials = p_neededMaterials;

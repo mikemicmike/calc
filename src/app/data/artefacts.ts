@@ -2456,7 +2456,7 @@ const artefacts = [
     faction: factions.bandosian.id,
     collections: [
       collections.greenGobboGoodiesII.id,
-      collections.museumBandosianIII.id,
+      collections.museumBandosianII.id,
     ],
     quantity: 0,
   },
@@ -2670,7 +2670,7 @@ const artefacts = [
     faction: factions.bandosian.id,
     collections: [
       collections.greenGobboGoodiesIII.id,
-      collections.museumBandosianIII.id,
+      collections.museumBandosianII.id,
     ],
     quantity: 0,
   },
@@ -3241,7 +3241,7 @@ const artefacts = [
     faction: factions.bandosian.id,
     collections: [
       collections.redRumRelicsII.id,
-      collections.museumBandosianII.id,
+      collections.museumBandosianIII.id,
     ],
     quantity: 0,
   },
