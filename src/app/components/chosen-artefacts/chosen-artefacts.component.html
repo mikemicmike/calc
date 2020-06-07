@@ -12,7 +12,7 @@
              [alt]="artefact.label"
              class="mr-2" />
         {{ artefact.quantity }} {{ artefact.label | titlecase }} ({{
-          artefact.xp
+          artefact.boostedXp  | number: '1.0-0'
         }}xp each)
       </li>
     </ul>

@@ -95,7 +95,7 @@ const collections = {
     id: 'zamorakianIII',
     label: 'Zamorakian III',
     collector: collectors.isaura,
-    levelReq: 110,
+    levelReq: 104,
   },
   zamorakianIV: {
     id: 'zamorakianIV',
@@ -167,7 +167,7 @@ const collections = {
     id: 'zarosianIV',
     label: 'Zarosian IV',
     collector: collectors.soran,
-    levelReq: 119,
+    levelReq: 118,
   },
   museumZamorakianI: {
     id: 'museumZamorakianI',
@@ -185,7 +185,7 @@ const collections = {
     id: 'museumZamorakianIII',
     label: 'Museum Zamorakian III',
     collector: collectors.velucia,
-    levelReq: 110,
+    levelReq: 104,
   },
   museumZamorakianIV: {
     id: 'museumZamorakianIV',
@@ -275,7 +275,7 @@ const collections = {
     id: 'museumZarosianIV',
     label: 'Museum Zarosian IV',
     collector: collectors.velucia,
-    levelReq: 119,
+    levelReq: 118,
   },
   wiseAmTheMusicMan: {
     id: 'wiseAmTheMusicMan',

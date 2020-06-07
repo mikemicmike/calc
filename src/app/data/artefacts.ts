@@ -1,8 +1,9 @@
 import { componentTypes } from './componentTypes';
 import { factions } from './factions';
 import { collections } from './collections';
+import { IArtefact } from '../models/IArtefact';
 
-const artefacts = [
+const artefacts: IArtefact[] = [
   {
     label: 'Venator Dagger',
     components: [
@@ -2921,8 +2922,8 @@ const artefacts = [
     xp: 23333.3,
     faction: factions.zamorakian.id,
     collections: [
-      collections.zamorakianIV.id,
-      collections.museumZamorakianIV.id,
+      collections.zamorakianIII.id,
+      collections.museumZamorakianIII.id,
     ],
     quantity: 0,
   },
@@ -2947,8 +2948,8 @@ const artefacts = [
     xp: 23333.3,
     faction: factions.zamorakian.id,
     collections: [
-      collections.zamorakianIV.id,
-      collections.museumZamorakianIV.id,
+      collections.zamorakianIII.id,
+      collections.museumZamorakianIII.id,
     ],
     quantity: 0,
   },
@@ -2973,8 +2974,8 @@ const artefacts = [
     xp: 23333.3,
     faction: factions.zamorakian.id,
     collections: [
-      collections.zamorakianIV.id,
-      collections.museumZamorakianIV.id,
+      collections.zamorakianIII.id,
+      collections.museumZamorakianIII.id,
     ],
     quantity: 0,
   },
@@ -3267,8 +3268,8 @@ const artefacts = [
     xp: 31000,
     faction: factions.zamorakian.id,
     collections: [
-      collections.zamorakianIII.id,
-      collections.museumZamorakianIII.id,
+      collections.zamorakianIV.id,
+      collections.museumZamorakianIV.id,
     ],
     quantity: 0,
   },
@@ -3293,8 +3294,8 @@ const artefacts = [
     xp: 31000,
     faction: factions.zamorakian.id,
     collections: [
-      collections.zamorakianIII.id,
-      collections.museumZamorakianIII.id,
+      collections.zamorakianIV.id,
+      collections.museumZamorakianIV.id,
     ],
     quantity: 0,
   },
@@ -3512,7 +3513,7 @@ const artefacts = [
     quantity: 0,
   },
   {
-    label: 'Kal-i-kran chieftain crown',
+    label: 'Kal-i-kra chieftain crown',
     components: [
       {
         type: componentTypes.yubiuskClay,
@@ -3525,7 +3526,7 @@ const artefacts = [
     ],
     level: 115,
     image:
-      'https://runescape.wiki/images/8/80/Kal-i-kran_chieftain_crown.png?09e29',
+      'https://runescape.wiki/images/7/7c/Kal-i-kra_chieftain_crown.png?09e29',
     xp: 38333.3,
     faction: factions.bandosian.id,
     collections: [
@@ -3536,7 +3537,7 @@ const artefacts = [
     quantity: 0,
   },
   {
-    label: 'Kal-i-kran mace',
+    label: 'Kal-i-kra mace',
     components: [
       {
         type: componentTypes.vulcanisedRubble,
@@ -3552,7 +3553,7 @@ const artefacts = [
       },
     ],
     level: 115,
-    image: 'https://runescape.wiki/images/5/5c/Kal-i-kran_mace.png?9c000',
+    image: 'https://runescape.wiki/images/b/b9/Kal-i-kra_mace.png?9c000',
     xp: 38333.3,
     faction: factions.bandosian.id,
     collections: [
@@ -3563,7 +3564,7 @@ const artefacts = [
     quantity: 0,
   },
   {
-    label: 'Kal-i-kran warhorn',
+    label: 'Kal-i-kra warhorn',
     components: [
       {
         type: componentTypes.vulcanisedRubble,
@@ -3579,7 +3580,7 @@ const artefacts = [
       },
     ],
     level: 115,
-    image: 'https://runescape.wiki/images/d/d2/Kal-i-kran_warhorn.png?6cca8',
+    image: 'https://runescape.wiki/images/c/c4/Kal-i-kra_warhorn.png?6cca8',
     xp: 38333.3,
     faction: factions.bandosian.id,
     collections: [

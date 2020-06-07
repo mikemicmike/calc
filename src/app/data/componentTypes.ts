@@ -337,7 +337,7 @@ const componentTypes = {
   },
   yubiuskClay: {
     id: 'yubiuskClay',
-    label: 'Yubiusk Clay',
+    label: "Yu'biusk Clay",
     geId: 49484,
     isArchMat: true,
     image: 'https://runescape.wiki/images/6/63/Yu%27biusk_clay.png?d3f3d',

@@ -9,4 +9,5 @@ export interface IArtefact {
   xp: number;
   level: number;
   faction: string;
+  boostedXp?: number;
 }

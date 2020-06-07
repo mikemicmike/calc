@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { componentTypes } from './data/componentTypes';
 import { artefacts } from './data/artefacts';
-import { factions } from './data/factions';
-import { collections } from './data/collections';
-import { HttpClient } from '@angular/common/http';
-import { xptables } from './data/xptables';
 import { IArtefact } from './models/IArtefact';
-import { IComponent } from './models/IComponent';
 import { StoreService } from './core/store.service';
 import { IArtefactChooserSection } from './models/IArtefactChooserSection';
 import { GrandExchangeService } from './core/grand-exchange.service';
@@ -38,16 +33,50 @@ export class AppComponent implements OnInit {
 
   public isRelicChanged(): void {
     localStorage.setItem('isRelic', this.isRelic.toString());
+    this.recalculateBoostedXp();
   }
 
   public outfitPiecesChanged(): void {
     localStorage.setItem('outfitPieces', this.outfitPieces);
+    this.recalculateBoostedXp();
+  }
+  public recalculateBoostedXp(): void {
+    let w_modifier: number = 1;
+    if (this.isRelic) {
+      w_modifier += 0.02;
+    }
+    switch (this.outfitPieces) {
+      case '1':
+        w_modifier += 0.01;
+        break;
+      case '2':
+        w_modifier += 0.02;
+        break;
+      case '3':
+        w_modifier += 0.03;
+        break;
+      case '4':
+        w_modifier += 0.04;
+        break;
+      case '5':
+        w_modifier += 0.06;
+        break;
+
+      default:
+        break;
+    }
+    if (artefacts) {
+      artefacts.forEach((p_artefact) => {
+        p_artefact.boostedXp = p_artefact.xp * w_modifier;
+      });
+    }
   }
   public ngOnInit(): void {
     this.darkMode = localStorage.getItem('darkMode') === 'true';
     this.isRelic = localStorage.getItem('isRelic') === 'true';
     this.outfitPieces = localStorage.getItem('outfitPieces');
     let x_count = 0;
+    this.recalculateBoostedXp();
     for (const w_key in componentTypes) {
       if (componentTypes.hasOwnProperty(w_key)) {
         const w_type = componentTypes[w_key];

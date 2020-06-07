@@ -7,8 +7,8 @@
   <ng-template ngFor
                let-material
                [ngForOf]="neededMaterials">
-    <div class="col-xl-6 material-card-holder"
-         *ngIf="!componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity">
+    <div class="col-xl-6 material-card-holder "
+         *ngIf="  !componentTypes[material.type.id].owned ||componentTypes[material.type.id].owned < material.quantity">
       <div class="p-2 material-card material-needed"
            [ngClass]="{'done': componentTypes[material.type.id].done}"
            (click)="toggleComplete(componentTypes[material.type.id])">
