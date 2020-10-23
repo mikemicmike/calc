@@ -1,4 +1,4 @@
-@import './src/assets/mixins';
+@import 'mixins';
 .material-bank {
   .card-body {
     @include card-floating-body();

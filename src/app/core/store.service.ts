@@ -19,11 +19,23 @@ export class StoreService {
     IComponent[]
   > = new BehaviorSubject(this._neededMaterials);
 
-  constructor() {}
+  constructor() {
+    artefacts.forEach((p_artefact) => {
+      const w_quantity: string = localStorage.getItem('chosen' + p_artefact.id);
+      if (w_quantity) {
+        p_artefact.quantity = Number(w_quantity);
+      }
+    });
+    this.calculateTotals();
+  }
 
   public addArtefact(p_artefact: IArtefact): void {
     p_artefact.quantity++;
     this.calculateTotals();
+    localStorage.setItem(
+      'chosen' + p_artefact.id,
+      p_artefact.quantity.toString()
+    );
   }
 
   public calculateTotals(): void {
@@ -80,6 +92,14 @@ export class StoreService {
   public removeArtefact(p_artefact: IArtefact): void {
     p_artefact.quantity--;
     this.calculateTotals();
+    if (p_artefact.quantity) {
+      localStorage.setItem(
+        'chosen' + p_artefact.id,
+        p_artefact.quantity.toString()
+      );
+    } else {
+      localStorage.removeItem('chosen' + p_artefact.id);
+    }
   }
 
   public resetAll(): void {
@@ -90,6 +110,7 @@ export class StoreService {
   public resetArtefacts(): void {
     artefacts.forEach((p_artefact: IArtefact) => {
       p_artefact.quantity = 0;
+      localStorage.removeItem('chosen' + p_artefact.id);
     });
     this.calculateTotals();
   }

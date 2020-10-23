@@ -48,6 +48,13 @@ const componentTypes = {
     isArchMat: false,
     image: 'https://runescape.wiki/images/c/cd/Bronze_bar.png?b167f',
   },
+  carbonBlack: {
+    id: 'carbonBlack',
+    label: 'Carbon Black',
+    geId: 49496,
+    isArchMat: true,
+    image: 'https://runescape.wiki/images/4/4a/Carbon_black.png?4517e',
+  },
   cadmiumRed: {
     id: 'cadmiumRed',
     label: 'Cadmium Red',
@@ -76,6 +83,13 @@ const componentTypes = {
     isArchMat: true,
     image: 'https://runescape.wiki/images/c/cb/Cobalt_blue.png?3f2d6',
   },
+  compassRose: {
+    id: 'compassRose',
+    label: 'Compass Rose',
+    geId: 49486,
+    isArchMat: true,
+    image: 'https://runescape.wiki/images/e/e9/Compass_rose.png?4f510',
+  },
   deathRune: {
     id: 'deathRune',
     label: 'Death Rune',
@@ -96,6 +110,13 @@ const componentTypes = {
     geId: 1601,
     isArchMat: false,
     image: 'https://runescape.wiki/images/e/ea/Diamond.png?144b7',
+  },
+  dragonMetal: {
+    id: 'dragonMetal',
+    label: 'Dragon Metal',
+    geId: 1615,
+    isArchMat: false,
+    image: 'https://runescape.wiki/images/3/36/Dragon_metal.png?f84b4',
   },
   dragonstone: {
     id: 'dragonstone',
@@ -124,6 +145,13 @@ const componentTypes = {
     geId: 49502,
     isArchMat: true,
     image: 'https://runescape.wiki/images/3/38/Eye_of_Dagon.png?2566e',
+  },
+  felt: {
+    id: 'felt',
+    label: 'Felt',
+    geId: 49448,
+    isArchMat: true,
+    image: 'https://runescape.wiki/images/b/b0/Felt.png?f6aca',
   },
   fossilisedBone: {
     id: 'fossilisedBone',
@@ -187,6 +215,13 @@ const componentTypes = {
     geId: 1775,
     isArchMat: false,
     image: 'https://runescape.wiki/images/8/84/Molten_glass.png?55506',
+  },
+  orgonestone: {
+    id: 'orgonestone',
+    label: 'Orgone',
+    geId: 49454,
+    isArchMat: true,
+    image: 'https://runescape.wiki/images/7/7b/Orgone.png?2984e',
   },
   orthenglass: {
     id: 'orthenglass',

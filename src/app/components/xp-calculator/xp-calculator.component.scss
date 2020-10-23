@@ -1,4 +1,4 @@
-@import './src/assets/mixins';
+@import 'mixins';
 .xp-calculator {
   .card-body {
     @include card-floating-body();

@@ -5,7 +5,9 @@ import { IArtefact } from '../models/IArtefact';
 
 const artefacts: IArtefact[] = [
   {
+    id: 'Venator_Dagger',
     label: 'Venator Dagger',
+    chronotes: 206,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -24,7 +26,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'VenatorCrossbow',
     label: 'Venator Crossbow',
+    chronotes: 206,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -44,7 +48,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'LegionaryGladius',
     label: 'Legionary Gladius',
+    chronotes: 220,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -67,7 +73,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'LegionarySquareShield',
     label: 'Legionary Square Shield',
+    chronotes: 220,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -91,7 +99,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PrimisElementisStandard',
     label: 'Primis Elementis Standard',
+    chronotes: 220,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -111,7 +121,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ZarosEffigy',
     label: 'Zaros Effigy',
+    chronotes: 244,
     components: [
       {
         type: componentTypes.samiteSilk,
@@ -134,7 +146,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ZarosianTrainingDummy',
     label: 'Zarosian Training Dummy',
+    chronotes: 244,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -154,7 +168,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HookahPipe',
     label: 'Hookah Pipe',
+    chronotes: 250,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -181,7 +197,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'OpulentWineGoblet',
     label: 'Opulent Wine Goblet',
+    chronotes: 250,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -204,7 +222,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'CrestOfDagon',
     label: 'Crest of Dagon',
+    chronotes: 272,
     components: [
       {
         type: componentTypes.goldrune,
@@ -228,7 +248,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DisorderPainting',
     label: 'Disorder Painting',
+    chronotes: 272,
     components: [
       {
         type: componentTypes.samiteSilk,
@@ -260,7 +282,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'LegatusMaximusFigurine',
     label: 'Legatus Maximus Figurine',
+    chronotes: 274,
     components: [
       {
         type: componentTypes.goldrune,
@@ -289,7 +313,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'SolemUmbraPainting',
     label: 'Solem in Umbra Painting',
+    chronotes: 274,
     components: [
       {
         type: componentTypes.samiteSilk,
@@ -317,7 +343,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'LesserDemonMask',
     label: 'Lesser Demon Mask',
+    chronotes: 282,
     components: [
       {
         type: componentTypes.leatherScraps,
@@ -343,12 +371,14 @@ const artefacts: IArtefact[] = [
     collections: [
       collections.zamorakianI.id,
       collections.museumZamorakianI.id,
-      collections.hatProblem.id,
+      collections.hatHoarder.id,
     ],
     quantity: 0,
   },
   {
+    id: 'ImpMask',
     label: 'Imp Mask',
+    chronotes: 282,
     components: [
       {
         type: componentTypes.leatherScraps,
@@ -369,13 +399,15 @@ const artefacts: IArtefact[] = [
     collections: [
       collections.zamorakianI.id,
       collections.museumZamorakianI.id,
-      collections.hatHoarder.id,
+      collections.hatProblem.id,
     ],
     faction: factions.zamorakian.id,
     quantity: 0,
   },
   {
+    id: 'GreaterDemonMask',
     label: 'Greater Demon Mask',
+    chronotes: 282,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -406,7 +438,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'OrderDisRobes',
     label: 'Order of Dis Robes',
+    chronotes: 352,
     components: [
       {
         type: componentTypes.samiteSilk,
@@ -429,7 +463,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'RitualDagger',
     label: 'Ritual Dagger',
+    chronotes: 352,
     components: [
       {
         type: componentTypes.goldrune,
@@ -456,7 +492,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'FryingPan',
     label: 'Frying Pan',
+    chronotes: 392,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -478,7 +516,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HallowedLantern',
     label: 'Hallowed Lantern',
+    chronotes: 392,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -504,7 +544,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'BrandingIron',
     label: 'Branding Iron',
+    chronotes: 412,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -530,7 +572,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'Manacles',
     label: 'Manacles',
+    chronotes: 412,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -556,7 +600,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'AncientTimepiece',
     label: 'Ancient Timepiece',
+    chronotes: 416,
     components: [
       {
         type: componentTypes.goldrune,
@@ -584,7 +630,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'LegatusPendant',
     label: 'Legatus Pendant',
+    chronotes: 416,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -615,7 +663,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'CeremonialUnicornOrnament',
     label: 'Ceremonial Unicorn Ornament',
+    chronotes: 418,
     components: [
       {
         type: componentTypes.keramos,
@@ -639,7 +689,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'CeremonialUnicornSaddle',
     label: 'Ceremonial Unicorn Saddle',
+    chronotes: 418,
     components: [
       {
         type: componentTypes.leatherScraps,
@@ -662,7 +714,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'Tetracompass',
     label: 'Tetracompass',
+    chronotes: 0,
     components: [
       {
         type: componentTypes.malachiteGreen,
@@ -694,7 +748,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'EverlightHarp',
     label: 'Everlight Harp',
+    chronotes: 466,
     components: [
       {
         type: componentTypes.everlightSilvithril,
@@ -717,7 +773,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'EverlightTrumpet',
     label: 'Everlight Trumpet',
+    chronotes: 466,
     components: [
       {
         type: componentTypes.everlightSilvithril,
@@ -741,7 +799,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'EverlightViolin',
     label: 'Everlight Violin',
+    chronotes: 466,
     components: [
       {
         type: componentTypes.starOfSaradomin,
@@ -768,7 +828,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'FoldedArmFigurineFemale',
     label: 'Folded-Arm Figurine(Female)',
+    chronotes: 490,
     components: [
       {
         type: componentTypes.whiteMarble,
@@ -791,7 +853,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'FoldedArmFigurineMale',
     label: 'Folded-Arm Figurine(Male)',
+    chronotes: 490,
     components: [
       {
         type: componentTypes.whiteMarble,
@@ -814,7 +878,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PontifexSignetRing',
     label: 'Pontifex Signet Ring',
+    chronotes: 508,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -845,7 +911,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'InciteFearSpellScroll',
     label: 'Incite Fear Spell Scroll',
+    chronotes: 508,
     components: [
       {
         type: componentTypes.vellum,
@@ -873,7 +941,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DominionDiscus',
     label: 'Dominion Discus',
+    chronotes: 556,
     components: [
       {
         type: componentTypes.keramos,
@@ -895,7 +965,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DominionJavelin',
     label: 'Dominion Javelin',
+    chronotes: 556,
     components: [
       {
         type: componentTypes.keramos,
@@ -917,7 +989,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DominionPelteShield',
     label: 'Dominion Pelte Shield',
+    chronotes: 556,
     components: [
       {
         type: componentTypes.starOfSaradomin,
@@ -939,7 +1013,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'LakeFirePainting',
     label: 'Lake of Fire Painting',
+    chronotes: 578,
     components: [
       {
         type: componentTypes.samiteSilk,
@@ -971,7 +1047,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
-    label: 'Lust metal sculpture',
+    id: 'LustMetalSculpture',
+    label: 'Lust Metal sculpture',
+    chronotes: 578,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -1003,7 +1081,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ChaosStar',
     label: 'Chaos Star',
+    chronotes: 584,
     components: [
       {
         type: componentTypes.chaoticBrimstone,
@@ -1025,7 +1105,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'SpikedDogCollar',
     label: 'Spiked Dog Collar',
+    chronotes: 584,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -1051,7 +1133,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'BronzeDominionMedal',
     label: 'Bronze Dominion Medal',
+    chronotes: 572,
     components: [
       {
         type: componentTypes.everlightSilvithril,
@@ -1078,7 +1162,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'SilverDominionMedal',
     label: 'Silver Dominion Medal',
+    chronotes: 572,
     components: [
       {
         type: componentTypes.everlightSilvithril,
@@ -1105,7 +1191,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DominionTorch',
     label: 'Dominion Torch',
+    chronotes: 572,
     components: [
       {
         type: componentTypes.goldrune,
@@ -1136,7 +1224,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'IkovianGerege',
     label: 'Ikovian Gerege',
+    chronotes: 602,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -1159,7 +1249,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ToyGlider',
     label: 'Toy Glider',
+    chronotes: 602,
     components: [
       {
         type: componentTypes.stormguardSteel,
@@ -1178,7 +1270,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ToyWarGolem',
     label: 'Toy War Golem',
+    chronotes: 602,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -1201,7 +1295,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DecorativeVase',
     label: 'Decorative Vase',
+    chronotes: 606,
     components: [
       {
         type: componentTypes.whiteMarble,
@@ -1223,7 +1319,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PateraBowl',
     label: 'Patera Bowl',
+    chronotes: 606,
     components: [
       {
         type: componentTypes.keramos,
@@ -1249,7 +1347,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'KantharosCup',
     label: 'Kantharos Cup',
+    chronotes: 606,
     components: [
       {
         type: componentTypes.everlightSilvithril,
@@ -1275,7 +1375,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'CeremonialMace',
     label: 'Ceremonial Mace',
+    chronotes: 624,
     components: [
       {
         type: componentTypes.imperialSteel,
@@ -1302,7 +1404,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ConsensusAdIdemPainting',
     label: 'Consensus Ad Idem Painting',
+    chronotes: 624,
     components: [
       {
         type: componentTypes.whiteOak,
@@ -1330,7 +1434,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PontifexMaximusFigurine',
     label: 'Pontifex Maximus Figurine',
+    chronotes: 624,
     components: [
       {
         type: componentTypes.zarosianInsigna,
@@ -1362,7 +1468,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'AvianSong-EggPlayer',
     label: 'Avian Song-Egg Player',
+    chronotes: 628,
     components: [
       {
         type: componentTypes.stormguardSteel,
@@ -1389,7 +1497,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'KeshikDrum',
     label: 'Keshik Drum',
+    chronotes: 628,
     components: [
       {
         type: componentTypes.wingsOfWar,
@@ -1420,7 +1530,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'MorinKhuur',
     label: 'Morin Khuur',
+    chronotes: 628,
     components: [
       {
         type: componentTypes.armadyleanYellow,
@@ -1443,7 +1555,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'EkeleshuunBlinderMask',
     label: 'Ekeleshuun blinder mask',
+    chronotes: 628,
     components: [
       {
         type: componentTypes.vulcanisedRubble,
@@ -1471,7 +1585,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'NarogoshuunHobGobBall',
     label: "Narogoshuun 'Hob-da-Gob' ball",
+    chronotes: 628,
     components: [
       {
         type: componentTypes.vulcanisedRubble,
@@ -1494,7 +1610,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'RekeshuunWarTether',
     label: 'Rekeshuun war tether',
+    chronotes: 628,
     components: [
       {
         type: componentTypes.warforgedBronze,
@@ -1520,7 +1638,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'AviansieDreamcoat',
     label: 'Aviansie Dreamcoat',
+    chronotes: 666,
     components: [
       {
         type: componentTypes.armadyleanYellow,
@@ -1543,7 +1663,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'CeremonialPlume',
     label: 'Ceremonial Plume',
+    chronotes: 666,
     components: [
       {
         type: componentTypes.armadyleanYellow,
@@ -1570,7 +1692,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PeacockingParasol',
     label: 'Peacocking parasol',
+    chronotes: 666,
     components: [
       {
         type: componentTypes.armadyleanYellow,
@@ -1593,7 +1717,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'OgreKyzajAxe',
     label: 'Ogre Kyzaj axe',
+    chronotes: 666,
     components: [
       {
         type: componentTypes.warforgedBronze,
@@ -1619,7 +1745,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'OrkCleaverSword',
     label: 'Ork cleaver sword',
+    chronotes: 666,
     components: [
       {
         type: componentTypes.warforgedBronze,
@@ -1641,7 +1769,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'LarupiaTrophy',
     label: 'Larupia trophy',
+    chronotes: 666,
     components: [
       {
         type: componentTypes.cadmiumRed,
@@ -1667,7 +1797,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'LionTrophy',
     label: 'Lion trophy',
+    chronotes: 666,
     components: [
       {
         type: componentTypes.cadmiumRed,
@@ -1693,7 +1825,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'SheWolfTrophy',
     label: 'She-Wolf trophy',
+    chronotes: 666,
     components: [
       {
         type: componentTypes.cadmiumRed,
@@ -1719,7 +1853,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PontifexCenser',
     label: 'Pontifex censer',
+    chronotes: 666,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -1750,7 +1886,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PontifexCrozier',
     label: 'Pontifex Crozier',
+    chronotes: 666,
     components: [
       {
         type: componentTypes.imperialSteel,
@@ -1777,7 +1915,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PontifexMitre',
     label: 'Pontifex Mitre',
+    chronotes: 666,
     components: [
       {
         type: componentTypes.samiteSilk,
@@ -1804,7 +1944,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ThorobshuunBattleStandard',
     label: 'Thorobshuun battle standard',
+    chronotes: 684,
     components: [
       {
         type: componentTypes.markOfTheKyzaj,
@@ -1835,7 +1977,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'YurkolgokhStinkGrenade',
     label: 'Yurkolgokh stink grenade',
+    chronotes: 684,
     components: [
       {
         type: componentTypes.yubiuskClay,
@@ -1862,7 +2006,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DominarianDevice',
     label: 'Dominarian device',
+    chronotes: 686,
     components: [
       {
         type: componentTypes.everlightSilvithril,
@@ -1892,7 +2038,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'FishingTrident',
     label: 'Fishing trident',
+    chronotes: 686,
     components: [
       {
         type: componentTypes.starOfSaradomin,
@@ -1919,7 +2067,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HawkeyeLensMultiVisionScope',
     label: 'Hawkeye lens multi-vision scope',
+    chronotes: 688,
     components: [
       {
         type: componentTypes.stormguardSteel,
@@ -1942,7 +2092,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'Talon3RazorWing',
     label: 'Talon-3 razor wing',
+    chronotes: 688,
     components: [
       {
         type: componentTypes.aetheriumAlloy,
@@ -1968,7 +2120,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'NecromanticFocus',
     label: 'Necromantic focus',
+    chronotes: 704,
     components: [
       {
         type: componentTypes.imperialSteel,
@@ -1995,7 +2149,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ExsanguinateSpellScroll',
     label: "'Exsanguinate' spell scroll",
+    chronotes: 704,
     components: [
       {
         type: componentTypes.vellum,
@@ -2019,7 +2175,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HighPriestCrozier',
     label: 'High priest crozier',
+    chronotes: 724,
     components: [
       {
         type: componentTypes.markOfTheKyzaj,
@@ -2046,7 +2204,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HighPriestMitre',
     label: 'High priest mitre',
+    chronotes: 724,
     components: [
       {
         type: componentTypes.markOfTheKyzaj,
@@ -2074,7 +2234,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HighPriestOrb',
     label: 'High priest orb',
+    chronotes: 724,
     components: [
       {
         type: componentTypes.markOfTheKyzaj,
@@ -2101,7 +2263,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PandemoniumTapestry',
     label: "'Pandemonium' tapestry",
+    chronotes: 724,
     components: [
       {
         type: componentTypes.whiteOak,
@@ -2133,7 +2297,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'TormentMetalSculpture',
     label: "'Torment' metal sculpture",
+    chronotes: 724,
     components: [
       {
         type: componentTypes.eyeOfTheDagon,
@@ -2160,7 +2326,51 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'RitualBell',
+    label: 'Ritual Bell',
+    chronotes: 742,
+    components: [
+      {
+        type: componentTypes.goldrune,
+        quantity: 40,
+      },
+      {
+        type: componentTypes.compassRose,
+        quantity: 38,
+      },
+    ],
+    level: 90,
+    image: 'https://runescape.wiki/images/2/2a/Ritual_bell.png?951ea',
+    xp: 10888.9,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinI.id, collections.museumDragonkinI.id],
+    quantity: 0,
+  },
+  {
+    id: 'pasaha',
+    label: 'Pasaha',
+    chronotes: 742,
+    components: [
+      {
+        type: componentTypes.felt,
+        quantity: 40,
+      },
+      {
+        type: componentTypes.goldrune,
+        quantity: 38,
+      },
+    ],
+    level: 90,
+    image: 'https://runescape.wiki/images/1/14/Pasaha.png?d32dd',
+    xp: 10888.9,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinI.id, collections.museumDragonkinI.id],
+    quantity: 0,
+  },
+  {
+    id: 'PrototypeGravimeter',
     label: 'Prototype gravimeter',
+    chronotes: 742,
     components: [
       {
         type: componentTypes.quintessence,
@@ -2186,7 +2396,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'SongbirdRecorder',
     label: 'Songbird recorder',
+    chronotes: 742,
     components: [
       {
         type: componentTypes.stormguardSteel,
@@ -2213,7 +2425,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'Amphora',
     label: 'Amphora',
+    chronotes: 744,
     components: [
       {
         type: componentTypes.everlightSilvithril,
@@ -2235,7 +2449,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'RodAsclepius',
     label: 'Rod of Asclepius',
+    chronotes: 744,
     components: [
       {
         type: componentTypes.whiteMarble,
@@ -2262,7 +2478,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ZarosianEwer',
     label: 'Zarosian ewer',
+    chronotes: 760,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -2281,7 +2499,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ZarosianStein',
     label: 'Zarosian stein',
+    chronotes: 760,
     components: [
       {
         type: componentTypes.thirdAgeIron,
@@ -2304,7 +2524,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'BeastkeeperHelm',
     label: 'Beastkeeper helm',
+    chronotes: 760,
     components: [
       {
         type: componentTypes.warforgedBronze,
@@ -2335,7 +2557,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'IdithuunHornRing',
     label: 'Idithuun horn ring',
+    chronotes: 760,
     components: [
       {
         type: componentTypes.yubiuskClay,
@@ -2357,7 +2581,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'NosorogSculpture',
     label: "'Nosorog!' sculpture",
+    chronotes: 760,
     components: [
       {
         type: componentTypes.yubiuskClay,
@@ -2384,7 +2610,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'StormguardGerege',
     label: 'Stormguard gerege',
+    chronotes: 778,
     components: [
       {
         type: componentTypes.stormguardSteel,
@@ -2410,7 +2638,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DayguardShield',
     label: 'Dayguard shield',
+    chronotes: 778,
     components: [
       {
         type: componentTypes.stormguardSteel,
@@ -2436,7 +2666,55 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'Vazara',
+    label: 'Vazara',
+    chronotes: 742,
+    components: [
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 30,
+      },
+      {
+        type: componentTypes.compassRose,
+        quantity: 28,
+      },
+      {
+        type: componentTypes.goldrune,
+        quantity: 28,
+      },
+    ],
+    level: 96,
+    image: 'https://runescape.wiki/images/c/c7/Vazara.png?1f806',
+    xp: 15000,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinI.id, collections.museumDragonkinI.id],
+    quantity: 0,
+  },
+  {
+    id: 'Kilaya',
+    label: 'Kilaya',
+    chronotes: 742,
+    components: [
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 46,
+      },
+      {
+        type: componentTypes.compassRose,
+        quantity: 40,
+      },
+    ],
+    level: 96,
+    image: 'https://runescape.wiki/images/c/ca/Kilaya.png?6be74',
+    xp: 15000,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinI.id, collections.museumDragonkinI.id],
+    quantity: 0,
+  },
+  {
+    id: 'GaragorshuunAnchor',
     label: 'Garagorshuun anchor',
+    chronotes: 810,
     components: [
       {
         type: componentTypes.warforgedBronze,
@@ -2462,7 +2740,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'OurgMegahitter',
     label: 'Ourg Megahitter',
+    chronotes: 810,
     components: [
       {
         type: componentTypes.whiteOak,
@@ -2492,7 +2772,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'OurgTowerGoblinCowerShield',
     label: 'Ourg Tower/Goblin Cower Shield',
+    chronotes: 810,
     components: [
       {
         type: componentTypes.markOfTheKyzaj,
@@ -2523,7 +2805,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'GolemHeart',
     label: 'Golem Heart',
+    chronotes: 826,
     components: [
       {
         type: componentTypes.aetheriumAlloy,
@@ -2553,7 +2837,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'GolemInstruction',
     label: 'Golem Instruction',
+    chronotes: 826,
     components: [
       {
         type: componentTypes.quintessence,
@@ -2580,7 +2866,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HellfireHaladie',
     label: 'Hellfire Haladie',
+    chronotes: 826,
     components: [
       {
         type: componentTypes.hellfireMetal,
@@ -2606,7 +2894,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HellfireKatar',
     label: 'Hellfire Katar',
+    chronotes: 826,
     components: [
       {
         type: componentTypes.hellfireMetal,
@@ -2628,7 +2918,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HellfireZaghnal',
     label: 'Hellfire Zaghnal',
+    chronotes: 826,
     components: [
       {
         type: componentTypes.hellfireMetal,
@@ -2654,7 +2946,76 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'deathMask',
+    label: 'Death Mask',
+    chronotes: 844,
+    components: [
+      {
+        type: componentTypes.orgonestone,
+        quantity: 56,
+      },
+      {
+        type: componentTypes.soapstone,
+        quantity: 34,
+      },
+    ],
+    level: 99,
+    image: 'https://runescape.wiki/images/f/f6/Death_mask.png?0dd04',
+    xp: 17500,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinI.id, collections.museumDragonkinI.id],
+    quantity: 0,
+  },
+  {
+    id: 'dragonkinCalendar',
+    label: 'Dragonkin Calendar',
+    chronotes: 844,
+    components: [
+      {
+        type: componentTypes.orgonestone,
+        quantity: 34,
+      },
+      {
+        type: componentTypes.carbonBlack,
+        quantity: 28,
+      },
+      {
+        type: componentTypes.compassRose,
+        quantity: 28,
+      },
+    ],
+    level: 99,
+    image: 'https://runescape.wiki/images/6/63/Dragonkin_calendar.png?60d46',
+    xp: 17500,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinI.id, collections.museumDragonkinI.id],
+    quantity: 0,
+  },
+  {
+    id: 'dragonkinStaff',
+    label: 'Dragonkin Staff',
+    chronotes: 844,
+    components: [
+      {
+        type: componentTypes.orgonestone,
+        quantity: 56,
+      },
+      {
+        type: componentTypes.compassRose,
+        quantity: 34,
+      },
+    ],
+    level: 99,
+    image: 'https://runescape.wiki/images/e/e0/Dragonkin_staff.png?f8e60',
+    xp: 17500,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinI.id, collections.museumDragonkinI.id],
+    quantity: 0,
+  },
+  {
+    id: 'DorgeshuunSpear',
     label: 'Dorgeshuun Spear',
+    chronotes: 844,
     components: [
       {
         type: componentTypes.warforgedBronze,
@@ -2676,7 +3037,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ForgedWarSculpture',
     label: 'Forged in War Sculpture',
+    chronotes: 844,
     components: [
       {
         type: componentTypes.warforgedBronze,
@@ -2703,7 +3066,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'KopisDagger',
     label: 'Kopis Dagger',
+    chronotes: 844,
     components: [
       {
         type: componentTypes.everlightSilvithril,
@@ -2725,7 +3090,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'XiphosShortSword',
     label: 'Xiphos Short Sword',
+    chronotes: 844,
     components: [
       {
         type: componentTypes.everlightSilvithril,
@@ -2747,7 +3114,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'SmokeCloudSpellScroll',
     label: 'Smoke Cloud Spell Scroll',
+    chronotes: 844,
     components: [
       {
         type: componentTypes.vellum,
@@ -2775,7 +3144,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'VigoremVial',
     label: 'Vigorem Vial',
+    chronotes: 844,
     components: [
       {
         type: componentTypes.imperialSteel,
@@ -2798,7 +3169,93 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DragonScalpel',
+    label: 'Dragon Scalpel',
+    chronotes: 844,
+    components: [
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 52,
+      },
+      {
+        type: componentTypes.felt,
+        quantity: 42,
+      },
+    ],
+    level: 101,
+    image: 'https://runescape.wiki/images/4/4f/Dragon_scalpel.png?94d49',
+    xp: 19833.3,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinII.id, collections.museumDragonkinII.id],
+    quantity: 0,
+  },
+  {
+    id: 'protectiveGoggles',
+    label: 'Protective Goggles',
+    chronotes: 844,
+    components: [
+      {
+        type: componentTypes.orthenglass,
+        quantity: 52,
+      },
+      {
+        type: componentTypes.felt,
+        quantity: 42,
+      },
+    ],
+    level: 101,
+    image: 'https://runescape.wiki/images/0/0b/Protective_goggles.png?bcc5d',
+    xp: 19833.3,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinII.id, collections.museumDragonkinII.id],
+    quantity: 0,
+  },
+  {
+    id: 'DragonBurner',
+    label: 'Dragon Burner',
+    chronotes: 844,
+    components: [
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 52,
+      },
+      {
+        type: componentTypes.orgonestone,
+        quantity: 42,
+      },
+    ],
+    level: 102,
+    image: 'https://runescape.wiki/images/5/55/Dragon_burner.png?328cf',
+    xp: 21000,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinII.id, collections.museumDragonkinII.id],
+    quantity: 0,
+  },
+  {
+    id: 'orthenglassFlask',
+    label: 'Orthenglass Flask',
+    chronotes: 844,
+    components: [
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 34,
+      },
+      {
+        type: componentTypes.orthenglass,
+        quantity: 60,
+      },
+    ],
+    level: 102,
+    image: 'https://runescape.wiki/images/6/6a/Orthenglass_flask.png?36606',
+    xp: 21000,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinII.id, collections.museumDragonkinII.id],
+    quantity: 0,
+  },
+  {
+    id: 'BlackfireLance',
     label: 'Blackfire Lance',
+    chronotes: 878,
     components: [
       {
         type: componentTypes.aetheriumAlloy,
@@ -2820,7 +3277,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'NightguardShield',
     label: 'Nightguard Shield',
+    chronotes: 878,
     components: [
       {
         type: componentTypes.stormguardSteel,
@@ -2846,7 +3305,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HuzamogaarbChaosCrown',
     label: 'Huzamogaarb chaos crown',
+    chronotes: 894,
     components: [
       {
         type: componentTypes.warforgedBronze,
@@ -2874,7 +3335,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'SaragorgakStarCrown',
     label: 'Saragorgak star crown',
+    chronotes: 894,
     components: [
       {
         type: componentTypes.warforgedBronze,
@@ -2901,7 +3364,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PossessionMetaSculpture',
     label: "'Possession' metal sculpture",
+    chronotes: 894,
     components: [
       {
         type: componentTypes.eyeOfTheDagon,
@@ -2928,7 +3393,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'Trishula',
     label: 'Trishula',
+    chronotes: 894,
     components: [
       {
         type: componentTypes.hellfireMetal,
@@ -2954,7 +3421,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'TsutsarothPiercing',
     label: 'Tsutsaroth piercing',
+    chronotes: 894,
     components: [
       {
         type: componentTypes.hellfireMetal,
@@ -2980,7 +3449,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ThePridePadosanPainting',
     label: "'The Pride of Padosan' painting",
+    chronotes: 910,
     components: [
       {
         type: componentTypes.cobaltBlue,
@@ -3012,7 +3483,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HallowedBeEverlightPainting',
     label: "'Hallowed Be the Everlight' painting",
+    chronotes: 910,
     components: [
       {
         type: componentTypes.cobaltBlue,
@@ -3044,7 +3517,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'TheLordLightPainting',
     label: "'The Lord of Light' painting",
+    chronotes: 910,
     components: [
       {
         type: componentTypes.cobaltBlue,
@@ -3076,7 +3551,86 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'MeditationPipe',
+    label: 'Meditation Pipe',
+    chronotes: 942,
+    components: [
+      {
+        type: componentTypes.orgonestone,
+        quantity: 60,
+      },
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 40,
+      },
+    ],
+    level: 106,
+    image: 'https://runescape.wiki/images/6/69/Meditation_pipe.png?661aa',
+    xp: 25666.7,
+    faction: factions.orthen.id,
+    collections: [
+      collections.dragonkinIII.id,
+      collections.museumDragonkinIII.id,
+    ],
+    quantity: 0,
+  },
+  {
+    id: 'SingingBowl',
+    label: 'Singing Bowl',
+    chronotes: 942,
+    components: [
+      {
+        type: componentTypes.orgonestone,
+        quantity: 60,
+      },
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 40,
+      },
+    ],
+    level: 106,
+    image:
+      'https://runescape.wiki/images/b/b7/Singing_bowl_%28artefact%29.png?6a5c4',
+    xp: 25666.7,
+    faction: factions.orthen.id,
+    collections: [
+      collections.dragonkinIII.id,
+      collections.museumDragonkinIII.id,
+    ],
+    quantity: 0,
+  },
+  {
+    id: 'PersonalTotem',
+    label: 'Personal Totem',
+    chronotes: 942,
+    components: [
+      {
+        type: componentTypes.orgonestone,
+        quantity: 48,
+      },
+      {
+        type: componentTypes.carbonBlack,
+        quantity: 26,
+      },
+      {
+        type: componentTypes.compassRose,
+        quantity: 26,
+      },
+    ],
+    level: 106,
+    image: 'https://runescape.wiki/images/0/01/Personal_totem.png?c5640',
+    xp: 25666.7,
+    faction: factions.orthen.id,
+    collections: [
+      collections.dragonkinIII.id,
+      collections.museumDragonkinIII.id,
+    ],
+    quantity: 0,
+  },
+  {
+    id: 'AncientMagicTablet',
     label: 'Ancient magic tablet',
+    chronotes: 942,
     components: [
       {
         type: componentTypes.ancientVis,
@@ -3095,7 +3649,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PortablePhylactery',
     label: 'Portable phylactery',
+    chronotes: 942,
     components: [
       {
         type: componentTypes.imperialSteel,
@@ -3122,7 +3678,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'AnimateDeadSpellScroll',
     label: "'Animate Dead' spell scroll",
+    chronotes: 942,
     components: [
       {
         type: componentTypes.vellum,
@@ -3150,7 +3708,65 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'LingamStone',
+    label: 'Lingam Stone',
+    chronotes: 988,
+    components: [
+      {
+        type: componentTypes.orgonestone,
+        quantity: 44,
+      },
+      {
+        type: componentTypes.carbonBlack,
+        quantity: 30,
+      },
+      {
+        type: componentTypes.compassRose,
+        quantity: 32,
+      },
+    ],
+    level: 108,
+    image: 'https://runescape.wiki/images/3/37/Lingam_stone.png?49ac6',
+    xp: 28333.3,
+    faction: factions.orthen.id,
+    collections: [
+      collections.dragonkinIII.id,
+      collections.museumDragonkinIII.id,
+    ],
+    quantity: 0,
+  },
+  {
+    id: 'MasterControl',
+    label: 'Master Control',
+    chronotes: 988,
+    components: [
+      {
+        type: componentTypes.orgonestone,
+        quantity: 30,
+      },
+      {
+        type: componentTypes.carbonBlack,
+        quantity: 32,
+      },
+      {
+        type: componentTypes.compassRose,
+        quantity: 44,
+      },
+    ],
+    level: 108,
+    image: 'https://runescape.wiki/images/d/db/Master_control.png?b0284',
+    xp: 28333.3,
+    faction: factions.orthen.id,
+    collections: [
+      collections.dragonkinIII.id,
+      collections.museumDragonkinIII.id,
+    ],
+    quantity: 0,
+  },
+  {
+    id: 'TheEnlightenedSoulScroll',
     label: "'The Enlightened Soul' scroll",
+    chronotes: 988,
     components: [
       {
         type: componentTypes.starOfSaradomin,
@@ -3174,7 +3790,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'TheEudoxianElementsTablet',
     label: "'The Eudoxian Elements' tablet",
+    chronotes: 988,
     components: [
       {
         type: componentTypes.whiteMarble,
@@ -3198,7 +3816,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DrogokishuunHookSword',
     label: 'Drogokishuun hook sword',
+    chronotes: 1004,
     components: [
       {
         type: componentTypes.warforgedBronze,
@@ -3225,7 +3845,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HobgoblinMansticker',
     label: 'Hobgoblin mansticker',
+    chronotes: 1004,
     components: [
       {
         type: componentTypes.warforgedBronze,
@@ -3247,7 +3869,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ChaosElementalTrophy',
     label: 'Chaos Elemental trophy',
+    chronotes: 1004,
     components: [
       {
         type: componentTypes.chaoticBrimstone,
@@ -3274,7 +3898,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ViriusTrophy',
     label: 'Virius trophy',
+    chronotes: 1004,
     components: [
       {
         type: componentTypes.demonhide,
@@ -3300,7 +3926,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'FlatCap',
     label: 'Flat Cap',
+    chronotes: 1020,
     components: [
       {
         type: componentTypes.armadyleanYellow,
@@ -3323,7 +3951,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'NightOwlFlightGoggles',
     label: 'Night Owl Flight Goggles',
+    chronotes: 1020,
     components: [
       {
         type: componentTypes.armadyleanYellow,
@@ -3350,7 +3980,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PrototypeGodbow',
     label: 'Prototype Godbow',
+    chronotes: 1050,
     components: [
       {
         type: componentTypes.aetheriumAlloy,
@@ -3376,7 +4008,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PrototypeGodstaff',
     label: 'Prototype Godstaff',
+    chronotes: 1050,
     components: [
       {
         type: componentTypes.aetheriumAlloy,
@@ -3402,7 +4036,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PrototypeGodsword',
     label: 'Prototype Godsword',
+    chronotes: 1050,
     components: [
       {
         type: componentTypes.aetheriumAlloy,
@@ -3428,7 +4064,55 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'XoloPickaxe',
+    label: 'Xolo Pickaxe',
+    chronotes: 1096,
+    components: [
+      {
+        type: componentTypes.goldrune,
+        quantity: 36,
+      },
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 50,
+      },
+      {
+        type: componentTypes.orgonestone,
+        quantity: 34,
+      },
+    ],
+    level: 113,
+    image: 'https://runescape.wiki/images/8/86/Xolo_pickaxe.png?c95f4',
+    xp: 35000,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinIV.id, collections.museumDragonkinIV.id],
+    quantity: 0,
+  },
+  {
+    id: 'XoloHardHat',
+    label: 'Xolo Hard Hat',
+    chronotes: 1096,
+    components: [
+      {
+        type: componentTypes.goldrune,
+        quantity: 54,
+      },
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 66,
+      },
+    ],
+    level: 113,
+    image: 'https://runescape.wiki/images/2/2d/Xolo_hard_hat.png?58cfc',
+    xp: 35000,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinIV.id, collections.museumDragonkinIV.id],
+    quantity: 0,
+  },
+  {
+    id: 'PraetorianHood',
     label: 'Praetorian Hood',
+    chronotes: 1096,
     components: [
       {
         type: componentTypes.ancientVis,
@@ -3459,7 +4143,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PraetorianRobes',
     label: 'Praetorian Robes',
+    chronotes: 1096,
     components: [
       {
         type: componentTypes.ancientVis,
@@ -3486,7 +4172,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PraetorianStaff',
     label: 'Praetorian Staff',
+    chronotes: 1096,
     components: [
       {
         type: componentTypes.imperialSteel,
@@ -3513,7 +4201,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'KalChieftainCrown',
     label: 'Kal-i-kra chieftain crown',
+    chronotes: 1112,
     components: [
       {
         type: componentTypes.yubiuskClay,
@@ -3537,7 +4227,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'KalMace',
     label: 'Kal-i-kra mace',
+    chronotes: 1112,
     components: [
       {
         type: componentTypes.vulcanisedRubble,
@@ -3564,7 +4256,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'KalWarhorn',
     label: 'Kal-i-kra warhorn',
+    chronotes: 1112,
     components: [
       {
         type: componentTypes.vulcanisedRubble,
@@ -3591,7 +4285,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'TsutsarothHelm',
     label: 'Tsutsaroth Helm',
+    chronotes: 1142,
     components: [
       {
         type: componentTypes.hellfireMetal,
@@ -3618,7 +4314,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'TsutsarothPauldron',
     label: 'Tsutsaroth Pauldron',
+    chronotes: 1142,
     components: [
       {
         type: componentTypes.hellfireMetal,
@@ -3644,7 +4342,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'TsutsarothUrumi',
     label: 'Tsutsaroth Urumi',
+    chronotes: 1142,
     components: [
       {
         type: componentTypes.hellfireMetal,
@@ -3670,7 +4370,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'KontosLance',
     label: 'Kontos Lance',
+    chronotes: 1158,
     components: [
       {
         type: componentTypes.everlightSilvithril,
@@ -3692,7 +4394,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DoruSpear',
     label: 'Doru Spear',
+    chronotes: 1158,
     components: [
       {
         type: componentTypes.everlightSilvithril,
@@ -3714,7 +4418,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'ChuluuStone',
     label: 'Chuluu Stone',
+    chronotes: 1174,
     components: [
       {
         type: componentTypes.aetheriumAlloy,
@@ -3745,7 +4451,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'QuintessenceCounter',
     label: 'Quintessence Counter',
+    chronotes: 1174,
     components: [
       {
         type: componentTypes.quintessence,
@@ -3771,7 +4479,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'SphericalAstrolabe',
     label: 'Spherical astrolabe',
+    chronotes: 1174,
     components: [
       {
         type: componentTypes.aetheriumAlloy,
@@ -3797,7 +4507,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'AncientGlobe',
     label: 'Ancient globe',
+    chronotes: 1174,
     components: [
       {
         type: componentTypes.whiteOak,
@@ -3820,7 +4532,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'BattlePlans',
     label: 'Battle Plans',
+    chronotes: 1174,
     components: [
       {
         type: componentTypes.vellum,
@@ -3843,7 +4557,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'PrimaLegioPainting',
     label: "'Prima Legio' Painting",
+    chronotes: 1174,
     components: [
       {
         type: componentTypes.whiteOak,
@@ -3875,7 +4591,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'HorogothgarCookingPot',
     label: 'Horogothgar cooking pot',
+    chronotes: 1204,
     components: [
       {
         type: componentTypes.yubiuskClay,
@@ -3902,7 +4620,9 @@ const artefacts: IArtefact[] = [
     quantity: 0,
   },
   {
+    id: 'DaBossManSculpture',
     label: "'Da Boss Man' sculpture",
+    chronotes: 1204,
     components: [
       {
         type: componentTypes.yubiuskClay,
@@ -3928,6 +4648,98 @@ const artefacts: IArtefact[] = [
       collections.museumBandosianIII.id,
       collections.knowledgeIsPower.id,
     ],
+    quantity: 0,
+  },
+  {
+    id: 'XoloSpear',
+    label: 'Xolo Spear',
+    chronotes: 1204,
+    components: [
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 74,
+      },
+      {
+        type: componentTypes.orgonestone,
+        quantity: 64,
+      },
+    ],
+    level: 119,
+    image: 'https://runescape.wiki/images/2/28/Xolo_spear.png?c2f70',
+    xp: 45000,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinIV.id, collections.museumDragonkinIV.id],
+    quantity: 0,
+  },
+  {
+    id: 'XoloShield',
+    label: 'Xolo Shield',
+    chronotes: 1204,
+    components: [
+      {
+        type: componentTypes.goldrune,
+        quantity: 52,
+      },
+      {
+        type: componentTypes.orgonestone,
+        quantity: 44,
+      },
+      {
+        type: componentTypes.felt,
+        quantity: 42,
+      },
+    ],
+    level: 119,
+    image: 'https://runescape.wiki/images/e/e5/Xolo_shield.png?ac9dc',
+    xp: 45000,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinIV.id, collections.museumDragonkinIV.id],
+    quantity: 0,
+  },
+  {
+    id: 'RakshaIdol',
+    label: "'Raksha' Idol",
+    chronotes: 1204,
+    components: [
+      {
+        type: componentTypes.orgonestone,
+        quantity: 56,
+      },
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 44,
+      },
+      {
+        type: componentTypes.goldrune,
+        quantity: 40,
+      },
+    ],
+    level: 120,
+    image: 'https://runescape.wiki/images/c/c0/%27Raksha%27_idol.png?766b4',
+    xp: 46666.7,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinIV.id, collections.museumDragonkinIV.id],
+    quantity: 0,
+  },
+  {
+    id: 'GoldDish',
+    label: 'Gold Dish',
+    chronotes: 1204,
+    components: [
+      {
+        type: componentTypes.goldrune,
+        quantity: 86,
+      },
+      {
+        type: componentTypes.dragonMetal,
+        quantity: 54,
+      },
+    ],
+    level: 120,
+    image: 'https://runescape.wiki/images/9/95/Gold_dish.png?62e7c',
+    xp: 46666.7,
+    faction: factions.orthen.id,
+    collections: [collections.dragonkinIV.id, collections.museumDragonkinIV.id],
     quantity: 0,
   },
 ];

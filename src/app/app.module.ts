@@ -14,6 +14,7 @@ import { IntroTextComponent } from './components/intro-text/intro-text.component
 import { RequiredMaterialsComponent } from './components/required-materials/required-materials.component';
 import { OwnedMaterialsComponent } from './components/owned-materials/owned-materials.component';
 import { NeededMaterialsComponent } from './components/needed-materials/needed-materials.component';
+import { DonationsComponent } from './components/donations/donations.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NeededMaterialsComponent } from './components/needed-materials/needed-m
     RequiredMaterialsComponent,
     OwnedMaterialsComponent,
     NeededMaterialsComponent,
+    DonationsComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],

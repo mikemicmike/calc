@@ -40,6 +40,12 @@ const collectors = {
     image: 'https://runescape.wiki/images/8/80/Lowse_chathead.png?c7259',
     // // color: factions.armadylean.color
   },
+  sharrigan: {
+    id: 'sharrigan',
+    label: 'Sharrigan',
+    image: 'https://runescape.wiki/images/4/43/Sharrigan_chathead.png?ad9f8',
+    // // color: factions.saradomist.color
+  },
   sirAtcha: {
     id: 'sirAtcha',
     label: 'Sir Atcha',

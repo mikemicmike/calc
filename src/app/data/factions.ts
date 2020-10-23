@@ -39,6 +39,14 @@ const factions = {
       'https://runescape.wiki/images/thumb/d/d9/Bandos_symbol.png/25px-Bandos_symbol.png',
     levelReq: 76,
   },
+  orthen: {
+    id: 'orthen',
+    label: 'Dragonkin (Orthen)',
+    color: '#62321e',
+    icon:
+      'https://runescape.wiki/images/thumb/5/54/Dragonkin_symbol.png/41px-Dragonkin_symbol.png?d4239',
+    levelReq: 90,
+  },
   miscelaneous: {
     id: 'miscellaneous',
     label: 'Miscellaneous',
