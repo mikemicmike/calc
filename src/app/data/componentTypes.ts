@@ -51,7 +51,7 @@ const componentTypes = {
   carbonBlack: {
     id: 'carbonBlack',
     label: 'Carbon Black',
-    geId: 49496,
+    geId: 50686,
     isArchMat: true,
     image: 'https://runescape.wiki/images/4/4a/Carbon_black.png?4517e',
   },
@@ -86,7 +86,7 @@ const componentTypes = {
   compassRose: {
     id: 'compassRose',
     label: 'Compass Rose',
-    geId: 49486,
+    geId: 50688,
     isArchMat: true,
     image: 'https://runescape.wiki/images/e/e9/Compass_rose.png?4f510',
   },
@@ -114,7 +114,7 @@ const componentTypes = {
   dragonMetal: {
     id: 'dragonMetal',
     label: 'Dragon Metal',
-    geId: 1615,
+    geId: 50690,
     isArchMat: false,
     image: 'https://runescape.wiki/images/3/36/Dragon_metal.png?f84b4',
   },
@@ -149,7 +149,7 @@ const componentTypes = {
   felt: {
     id: 'felt',
     label: 'Felt',
-    geId: 49448,
+    geId: 50692,
     isArchMat: true,
     image: 'https://runescape.wiki/images/b/b0/Felt.png?f6aca',
   },
@@ -219,7 +219,7 @@ const componentTypes = {
   orgonestone: {
     id: 'orgonestone',
     label: 'Orgone',
-    geId: 49454,
+    geId: 50694,
     isArchMat: true,
     image: 'https://runescape.wiki/images/7/7b/Orgone.png?2984e',
   },
